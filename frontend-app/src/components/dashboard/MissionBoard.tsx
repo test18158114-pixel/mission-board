@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from 'react';
-import { io, Socket } from 'socket.io-client';
 import { Heatmap, HeatmapDay } from './Heatmap';
 
 // ==========================================
@@ -9,6 +8,7 @@ import { Heatmap, HeatmapDay } from './Heatmap';
 // ==========================================
 interface Mission {
   id: string;
+  missionId: string;
   title: string;
   type: 'checkbox' | 'numeric' | 'timer' | 'workout';
   category: string;
@@ -48,105 +48,69 @@ interface LeaderboardUser {
   totalXP: number;
 }
 
-const BACKEND_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
+// In static export mode, BACKEND_URL resolves to the PHP backend folder.
+// Replace this URL with your actual InfinityFree website URL (e.g. 'http://yourdomain.rf.gd/backend')
+const BACKEND_URL = process.env.NEXT_PUBLIC_API_URL || '/backend';
 
 export const MissionBoard: React.FC = () => {
   // 1. DASHBOARD STATES
   const [missions, setMissions] = useState<Mission[]>([]);
-  const [feed, setFeed] = useState<FriendActivity[]>([
-    { id: 'f1', friendName: 'Rohan Sharma', avatar: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=100', action: 'completed Chest Workout 🔥', reactionCount: 8, hasReacted: true },
-    { id: 'f2', friendName: 'Aman Verma', avatar: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?w=100', action: 'completed Water Goal 💧 (4.0L/4.0L)', reactionCount: 3, hasReacted: false },
-    { id: 'f3', friendName: 'Vivek Gupta', avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100', action: 'completed Sleep Goal 😴 (8 Hours)', reactionCount: 12, hasReacted: false }
-  ]);
+  const [feed, setFeed] = useState<FriendActivity[]>([]);
   const [leaderboard, setLeaderboard] = useState<LeaderboardUser[]>([]);
   const [heatmapData, setHeatmapData] = useState<HeatmapDay[]>([]);
   const [overallStreak, setOverallStreak] = useState<number>(7);
   const [todayXP, setTodayXP] = useState<number>(0);
   const [loading, setLoading] = useState<boolean>(true);
-  const [isConnected, setIsConnected] = useState<boolean>(false);
+  const [isPollingActive, setIsPollingActive] = useState<boolean>(false);
 
-  const socketRef = useRef<Socket | null>(null);
   const timerIntervalRef = useRef<NodeJS.Timeout | null>(null);
 
-  // 2. CONNECT TO BACKEND & LOAD INITIAL DATA
-  useEffect(() => {
-    async function loadData() {
-      try {
-        const [resMissions, resLeaderboard, resStats] = await Promise.all([
-          fetch(`${BACKEND_URL}/api/v1/missions/today`),
-          fetch(`${BACKEND_URL}/api/v1/leaderboard`),
-          fetch(`${BACKEND_URL}/api/v1/stats`)
-        ]);
+  // 2. FETCH AND POLL SYNCS
+  const fetchAllData = async () => {
+    try {
+      const [resMissions, resLeaderboard, resStats, resFeed] = await Promise.all([
+        fetch(`${BACKEND_URL}/get_today_missions.php`),
+        fetch(`${BACKEND_URL}/get_leaderboard.php`),
+        fetch(`${BACKEND_URL}/get_stats.php`),
+        fetch(`${BACKEND_URL}/get_feed.php`)
+      ]);
 
-        if (resMissions.ok) setMissions(await resMissions.json());
-        if (resLeaderboard.ok) setLeaderboard(await resLeaderboard.json());
-        if (resStats.ok) {
-          const stats = await resStats.json();
-          setHeatmapData(stats.heatmap);
-          setOverallStreak(stats.streak);
-          setTodayXP(stats.completedXP || 0);
-        }
-      } catch (err) {
-        console.warn('Could not connect to live backend API. Running in local mock mode.', err);
-        // Fallback to local mock templates if server is offline
-        seedMockLocalData();
-      } finally {
-        setLoading(false);
+      if (resMissions.ok) setMissions(await resMissions.json());
+      if (resLeaderboard.ok) setLeaderboard(await resLeaderboard.json());
+      if (resStats.ok) {
+        const stats = await resStats.json();
+        setHeatmapData(stats.heatmap);
+        setOverallStreak(stats.streak);
+        setTodayXP(stats.completedXP || 0);
       }
+      if (resFeed.ok) setFeed(await resFeed.json());
+      
+      setIsPollingActive(true);
+    } catch (err) {
+      console.warn('Could not connect to live PHP backend. Operating in mock simulation mode.', err);
+      setIsPollingActive(false);
+      if (missions.length === 0) seedMockLocalData();
     }
+  };
 
-    loadData();
+  useEffect(() => {
+    // Initial fetch
+    fetchAllData().finally(() => setLoading(false));
 
-    // Initialize Socket.IO connection
-    const socket = io(BACKEND_URL, {
-      transports: ['websocket'],
-      autoConnect: true
-    });
-    socketRef.current = socket;
+    // Expose short-polling every 4 seconds to query updates from friends
+    const pollTimer = setInterval(() => {
+      fetchAllData();
+    }, 4000);
 
-    socket.on('connect', () => {
-      setIsConnected(true);
-      console.log('Connected to real-time sync server.');
-    });
-
-    socket.on('disconnect', () => {
-      setIsConnected(false);
-      console.log('Real-time sync server disconnected.');
-    });
-
-    // Handle real-time updates from friends
-    socket.on('friend:mission_completed', (data: any) => {
-      // Add friend action to activity feed
-      const newPost: FriendActivity = {
-        id: data.feedPostId || String(Date.now()),
-        friendName: data.friendName,
-        avatar: `https://api.dicebear.com/7.x/adventurer/svg?seed=${data.friendName}`,
-        action: `completed ${data.title} 🎯 (+${data.xpAwarded} XP, Streak: ${data.overallStreak} days)`,
-        reactionCount: 0,
-        hasReacted: false
-      };
-      setFeed(prev => [newPost, ...prev.slice(0, 8)]);
-    });
-
-    socket.on('friend:mission_progressed', (data: any) => {
-      // Temporary live progress flash in feed (optional UI indicator)
-      console.log(`${data.friendName} progressed on ${data.missionId}: ${data.currentValue} / ${data.targetValue}`);
-    });
-
-    socket.on('user:level_up', (data: any) => {
-      alert(`🎉 LEVEL UP! ${data.message}`);
-    });
-
-    return () => {
-      socket.disconnect();
-    };
+    return () => clearInterval(pollTimer);
   }, []);
 
-  // Seed local fallback data
+  // Seed local fallback data if backend is offline
   const seedMockLocalData = () => {
     setMissions([
       {
         id: 'm1',
+        missionId: '1',
         title: 'Chest Workout (Push Day)',
         type: 'workout',
         category: 'workout',
@@ -159,6 +123,7 @@ export const MissionBoard: React.FC = () => {
       },
       {
         id: 'm2',
+        missionId: '2',
         title: 'Hydrate Consistently',
         type: 'numeric',
         category: 'water',
@@ -171,6 +136,7 @@ export const MissionBoard: React.FC = () => {
       },
       {
         id: 'm3',
+        missionId: '3',
         title: 'Stretching & Mobility',
         type: 'timer',
         category: 'mobility',
@@ -184,6 +150,7 @@ export const MissionBoard: React.FC = () => {
       },
       {
         id: 'm4',
+        missionId: '4',
         title: 'Eat 180g Protein',
         type: 'numeric',
         category: 'nutrition',
@@ -196,6 +163,7 @@ export const MissionBoard: React.FC = () => {
       },
       {
         id: 'm5',
+        missionId: '5',
         title: 'Take Creatine Monohydrate',
         type: 'checkbox',
         category: 'supplements',
@@ -209,9 +177,14 @@ export const MissionBoard: React.FC = () => {
     ]);
 
     setLeaderboard([
-      { rank: 1, name: 'Rohan Sharma', avatar: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=100', completionRate: 98, streak: 14, totalXP: 3820 },
-      { rank: 2, name: 'You', avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100', completionRate: 78, streak: 7, totalXP: 2480 },
-      { rank: 3, name: 'Aman Verma', avatar: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?w=100', completionRate: 72, streak: 5, totalXP: 1980 }
+      { rank: 1, name: 'Rohan Sharma', avatar: '', completionRate: 98, streak: 14, totalXP: 3820 },
+      { rank: 2, name: 'You', avatar: '', completionRate: 78, streak: 7, totalXP: 2480 },
+      { rank: 3, name: 'Aman Verma', avatar: '', completionRate: 72, streak: 5, totalXP: 1980 }
+    ]);
+
+    setFeed([
+      { id: 'f1', friendName: 'Rohan Sharma', avatar: '', action: 'completed Chest Workout 🔥', reactionCount: 8, hasReacted: true },
+      { id: 'f2', friendName: 'Aman Verma', avatar: '', action: 'completed Water Goal 💧 (4.0L/4.0L)', reactionCount: 3, hasReacted: false }
     ]);
 
     const mockHeatmap: HeatmapDay[] = [];
@@ -238,7 +211,7 @@ export const MissionBoard: React.FC = () => {
             const isFinished = nextElapsed >= m.timer.duration;
             
             if (isFinished) {
-              triggerMissionCompletion(m.id);
+              updateMissionStateOnBackend(m.id, { elapsedSeconds: nextElapsed });
             }
             
             return {
@@ -255,24 +228,27 @@ export const MissionBoard: React.FC = () => {
     return () => {
       if (timerIntervalRef.current) clearInterval(timerIntervalRef.current);
     };
-  }, []);
+  }, [isPollingActive]);
 
-  // 4. EMIT REAL-TIME SYNCHRONIZATIONS
-  const triggerMissionCompletion = (id: string) => {
-    // 1. Calculate XP reward
-    const targetMission = missions.find(m => m.id === id);
-    if (!targetMission) return;
-    const xpAwarded = targetMission.priority === 'high' ? 100 : 40;
+  // 4. API MUTATION CALLS
+  const updateMissionStateOnBackend = async (id: string, payload: object) => {
+    if (!isPollingActive) return; // Skip if in offline mockup simulation
 
-    setTodayXP(prev => prev + xpAwarded);
-
-    // 2. Emit Socket IO completion event to sync with online friends
-    if (socketRef.current && isConnected) {
-      socketRef.current.emit('mission:complete', {
-        missionId: id,
-        logId: id, // In dynamic dev mode, log ID is mock-mapped to mission ID
-        xpAwarded
+    try {
+      const response = await fetch(`${BACKEND_URL}/complete_mission.php`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          logId: id,
+          ...payload
+        })
       });
+      if (response.ok) {
+        // Trigger rapid polling sync to fetch fresh XP and feeds immediately
+        fetchAllData();
+      }
+    } catch (err) {
+      console.error('Error posting mission update to PHP backend:', err);
     }
   };
 
@@ -280,7 +256,7 @@ export const MissionBoard: React.FC = () => {
     setMissions(prev => prev.map(m => {
       if (m.id === id) {
         const nextCompleted = !m.isCompleted;
-        if (nextCompleted) triggerMissionCompletion(m.id);
+        updateMissionStateOnBackend(m.id, {});
         return {
           ...m,
           isCompleted: nextCompleted,
@@ -295,23 +271,9 @@ export const MissionBoard: React.FC = () => {
     setMissions(prev => prev.map(m => {
       if (m.id === id && m.type === 'numeric') {
         const current = Math.max(0, parseFloat((m.progress.current + delta).toFixed(1)));
-        const isAlreadyCompleted = m.isCompleted;
         const isNowCompleted = current >= m.progress.target;
         
-        // Trigger sync if completed for the first time
-        if (isNowCompleted && !isAlreadyCompleted) {
-          triggerMissionCompletion(m.id);
-        }
-
-        // Emit Socket live slider progress updates (debounced)
-        if (socketRef.current && isConnected) {
-          socketRef.current.emit('mission:progress', {
-            missionId: id,
-            currentValue: current,
-            targetValue: m.progress.target,
-            unit: m.progress.unit
-          });
-        }
+        updateMissionStateOnBackend(m.id, { currentValue: current });
 
         return {
           ...m,
@@ -326,9 +288,14 @@ export const MissionBoard: React.FC = () => {
   const handleToggleTimer = (id: string) => {
     setMissions(prev => prev.map(m => {
       if (m.id === id && m.type === 'timer' && m.timer) {
+        const nextRunning = !m.timer.isRunning;
+        // If pausing, save elapsed state to backend
+        if (!nextRunning) {
+          updateMissionStateOnBackend(m.id, { elapsedSeconds: m.timer.elapsed });
+        }
         return {
           ...m,
-          timer: { ...m.timer, isRunning: !m.timer.isRunning }
+          timer: { ...m.timer, isRunning: nextRunning }
         };
       }
       return m;
@@ -342,13 +309,6 @@ export const MissionBoard: React.FC = () => {
   const handleReactToActivity = (id: string) => {
     setFeed(prev => prev.map(item => {
       if (item.id === id) {
-        // Emit like to friends via WebSocket
-        if (socketRef.current && isConnected) {
-          socketRef.current.emit('feed:react', {
-            feedPostId: id,
-            reactionType: 'fire'
-          });
-        }
         return {
           ...item,
           reactionCount: item.hasReacted ? item.reactionCount - 1 : item.reactionCount + 1,
@@ -373,7 +333,7 @@ export const MissionBoard: React.FC = () => {
     return (
       <div className="min-h-screen bg-zinc-950 flex flex-col items-center justify-center text-white">
         <div className="w-12 h-12 rounded-full border-4 border-violet-500 border-t-transparent animate-spin mb-4" />
-        <p className="text-sm font-semibold tracking-wide text-zinc-400">Loading Premium Mission Board...</p>
+        <p className="text-sm font-semibold tracking-wide text-zinc-400">Loading PHP-Connected Mission Board...</p>
       </div>
     );
   }
@@ -382,11 +342,11 @@ export const MissionBoard: React.FC = () => {
     <div className="min-h-screen bg-zinc-950 text-white font-sans overflow-x-hidden antialiased">
       {/* Sync Status Banner */}
       <div className={`text-center py-1.5 text-xs font-semibold tracking-wide transition-all ${
-        isConnected ? 'bg-emerald-500/10 text-emerald-400 border-b border-emerald-500/20' : 'bg-rose-500/10 text-rose-400 border-b border-rose-500/20'
+        isPollingActive ? 'bg-emerald-500/10 text-emerald-400 border-b border-emerald-500/20' : 'bg-rose-500/10 text-rose-400 border-b border-rose-500/20'
       }`}>
-        {isConnected 
-          ? '● Live Real-Time Synchronizer Active (Socket.IO Connected)' 
-          : '○ Offline Mode (Backend Server at localhost:5000 not detected, operating in offline fallback)'}
+        {isPollingActive 
+          ? '● Live PHP Database Polling Active (Syncing every 4s)' 
+          : '○ Offline Simulation Mode (No PHP backend detected, running on local mockup DB)'}
       </div>
 
       {/* Decorative Blur Backgrounds */}
@@ -405,7 +365,7 @@ export const MissionBoard: React.FC = () => {
               <h1 className="text-xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-zinc-200 to-zinc-500">
                 Mission Board
               </h1>
-              <span className="text-xs text-zinc-400">Advanced Daily Accountability</span>
+              <span className="text-xs text-zinc-400">InfinityFree PHP/MySQL Edition</span>
             </div>
           </div>
           
@@ -686,7 +646,7 @@ export const MissionBoard: React.FC = () => {
                 {feed.map((activity) => (
                   <div key={activity.id} className="flex items-start space-x-3 text-xs">
                     <img 
-                      src={activity.avatar} 
+                      src={activity.avatar || "https://api.dicebear.com/7.x/adventurer/svg?seed=" + activity.friendName} 
                       alt={activity.friendName} 
                       className="w-8 h-8 rounded-full border border-white/10 object-cover"
                     />
@@ -733,7 +693,7 @@ export const MissionBoard: React.FC = () => {
                         {user.rank}
                       </span>
                       <img 
-                        src={user.avatar} 
+                        src={user.avatar || "https://api.dicebear.com/7.x/adventurer/svg?seed=" + user.name} 
                         alt={user.name} 
                         className="w-7 h-7 rounded-full border border-white/10 object-cover"
                       />
