@@ -17,10 +17,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 
 // Database Credentials
 // Replace with your actual InfinityFree MySQL settings from cPanel
-define('DB_HOST', '127.0.0.1'); 
-define('DB_NAME', 'mission_board');
-define('DB_USER', 'root');
-define('DB_PASS', '');
+define('DB_HOST', 'sql204.infinityfree.com'); 
+define('DB_NAME', 'if0_42287754_mission_board');
+define('DB_USER', 'if0_42287754');
+define('DB_PASS', 'C0ao1o0Rry3Fmh2');
 
 try {
     $conn = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=utf8mb4", DB_USER, DB_PASS);
