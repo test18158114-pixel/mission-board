@@ -1,0 +1,2158 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Aesthetic Classic Physique Program</title>
+        
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        @page {
+            size: A4;
+            margin-top: 2.2cm;
+            margin-bottom: 2.2cm;
+            margin-left: 2cm;
+            margin-right: 2cm;
+        }
+        
+        @page :first {
+            margin-top: 0;
+            margin-bottom: 0;
+            margin-left: 0;
+            margin-right: 0;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #1e293b;
+            background-color: #ffffff;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            font-size: 10pt;
+        }
+        
+        /* Cover Page Styling */
+        .cover-page {
+            background-color: #0b0f19;
+            color: #ffffff;
+            height: 100vh;
+            width: 100vw;
+            box-sizing: border-box;
+            padding: 3.5cm 2.5cm;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            page-break-after: always;
+            position: relative;
+        }
+        
+        .cover-accent-line {
+            position: absolute;
+            top: 0;
+            left: 2.5cm;
+            width: 120px;
+            height: 6px;
+            background-color: #c5a880;
+        }
+        
+        .cover-title-group {
+            margin-top: 2.5cm;
+        }
+        
+        .cover-tagline {
+            font-size: 10pt;
+            font-weight: 600;
+            letter-spacing: 4px;
+            color: #c5a880;
+            text-transform: uppercase;
+            margin-bottom: 0.5cm;
+        }
+        
+        .cover-title {
+            font-family: 'Cinzel', serif;
+            font-size: 38pt;
+            font-weight: 800;
+            line-height: 1.15;
+            color: #ffffff;
+            margin: 0;
+            letter-spacing: 1px;
+        }
+        
+        .cover-subtitle {
+            font-size: 15pt;
+            font-weight: 300;
+            color: #94a3b8;
+            margin-top: 0.6cm;
+            max-width: 85%;
+            line-height: 1.5;
+        }
+        
+        .cover-bottom {
+            margin-top: auto;
+            border-top: 1px solid #1e293b;
+            padding-top: 1cm;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+        
+        .cover-author {
+            font-family: 'Cinzel', serif;
+            font-size: 12pt;
+            font-weight: 700;
+            color: #c5a880;
+            letter-spacing: 1px;
+        }
+        
+        .cover-credentials {
+            font-size: 8pt;
+            color: #64748b;
+            margin-top: 0.1cm;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .cover-version {
+            font-size: 8pt;
+            color: #475569;
+            text-align: right;
+        }
+        
+        /* General Headings */
+        h1, h2, h3, h4 {
+            font-family: 'Cinzel', serif;
+            color: #0b0f19;
+            page-break-after: avoid;
+            margin-top: 0;
+        }
+        
+        h1 {
+            font-size: 22pt;
+            font-weight: 700;
+            border-bottom: 1.5px solid #c5a880;
+            padding-bottom: 0.3cm;
+            margin-top: 1.2cm;
+            margin-bottom: 0.8cm;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        
+        h2 {
+            font-size: 15pt;
+            font-weight: 700;
+            margin-top: 1cm;
+            margin-bottom: 0.5cm;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 0.2cm;
+            color: #0b0f19;
+        }
+        
+        h3 {
+            font-size: 11pt;
+            font-weight: 700;
+            color: #a98d65;
+            margin-top: 0.6cm;
+            margin-bottom: 0.3cm;
+            letter-spacing: 0.5px;
+        }
+        
+        p {
+            margin-top: 0;
+            margin-bottom: 0.4cm;
+            text-align: justify;
+        }
+        
+        ul, ol {
+            margin-top: 0;
+            margin-bottom: 0.5cm;
+            padding-left: 0.5cm;
+        }
+        
+        li {
+            margin-bottom: 0.2cm;
+            text-align: justify;
+        }
+        
+        .page-break {
+            page-break-before: always;
+        }
+        
+        /* Table of Contents */
+        .toc-list {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 1cm;
+        }
+        
+        .toc-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 0.4cm;
+            font-size: 10.5pt;
+        }
+        
+        .toc-title {
+            font-weight: 600;
+            color: #0b0f19;
+            background: #ffffff;
+            padding-right: 5px;
+            z-index: 2;
+        }
+        
+        .toc-dots {
+            flex-grow: 1;
+            border-bottom: 1px dotted #cbd5e1;
+            margin: 0 10px 4px 10px;
+            z-index: 1;
+        }
+        
+        .toc-page {
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            color: #c5a880;
+            background: #ffffff;
+            padding-left: 5px;
+            z-index: 2;
+        }
+        
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 0.6cm;
+            font-size: 9pt;
+            page-break-inside: avoid;
+        }
+        
+        th {
+            background-color: #0b0f19;
+            color: #ffffff;
+            font-family: 'Cinzel', serif;
+            font-size: 8.5pt;
+            font-weight: 700;
+            text-align: left;
+            padding: 8px 10px;
+            border-bottom: 2px solid #c5a880;
+            letter-spacing: 0.5px;
+        }
+        
+        td {
+            padding: 8px 10px;
+            border-bottom: 1px solid #e2e8f0;
+            vertical-align: top;
+        }
+        
+        tr:nth-child(even) td {
+            background-color: #f8fafc;
+        }
+        
+        /* Badges */
+        .badge {
+            display: inline-block;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 7.5pt;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        
+        .badge-rir {
+            background-color: #fef2f2;
+            color: #991b1b;
+            border: 1px solid #fca5a5;
+        }
+        
+        .badge-tempo {
+            background-color: #f0fdf4;
+            color: #166534;
+            border: 1px solid #bbf7d0;
+        }
+        
+        .badge-rest {
+            background-color: #eff6ff;
+            color: #1e40af;
+            border: 1px solid #bfdbfe;
+        }
+        
+        .badge-weight {
+            background-color: #faf5ff;
+            color: #6b21a8;
+            border: 1px solid #e9d5ff;
+        }
+        
+        /* Callouts */
+        .callout {
+            background-color: #f8fafc;
+            border-left: 4.5px solid #c5a880;
+            padding: 12px 16px;
+            margin-bottom: 0.5cm;
+            border-radius: 0 8px 8px 0;
+            page-break-inside: avoid;
+        }
+        
+        .callout-title {
+            font-family: 'Cinzel', serif;
+            font-size: 9.5pt;
+            font-weight: 700;
+            color: #0b0f19;
+            margin-bottom: 4px;
+            letter-spacing: 0.5px;
+        }
+        
+        .callout-content {
+            font-size: 9pt;
+            color: #475569;
+            margin: 0;
+        }
+        
+        .science-box {
+            background-color: #f0fdfa;
+            border-left: 4.5px solid #0d9488;
+            padding: 12px 16px;
+            margin-bottom: 0.5cm;
+            border-radius: 0 8px 8px 0;
+            page-break-inside: avoid;
+        }
+        
+        .science-title {
+            font-family: 'Cinzel', serif;
+            font-size: 9.5pt;
+            font-weight: 700;
+            color: #0f766e;
+            margin-bottom: 4px;
+            letter-spacing: 0.5px;
+        }
+        
+        .science-content {
+            font-size: 9pt;
+            color: #115e59;
+            margin: 0;
+        }
+        
+        /* Exercise Cards */
+        .ex-card {
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            margin-bottom: 0.6cm;
+            overflow: hidden;
+            page-break-inside: avoid;
+        }
+        
+        .ex-header {
+            background-color: #0b0f19;
+            color: #ffffff;
+            padding: 10px 14px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .ex-name {
+            font-family: 'Cinzel', serif;
+            font-size: 11pt;
+            font-weight: 700;
+            color: #c5a880;
+            letter-spacing: 0.5px;
+        }
+        
+        .ex-target {
+            font-size: 8.5pt;
+            color: #94a3b8;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+        
+        .ex-body {
+            padding: 14px;
+            background-color: #ffffff;
+        }
+        
+        .ex-meta-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #f1f5f9;
+            padding-bottom: 10px;
+        }
+        
+        .ex-meta-item {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .ex-meta-label {
+            font-size: 7.5pt;
+            color: #64748b;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-bottom: 3px;
+        }
+        
+        .ex-detail-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            font-size: 8.5pt;
+            margin-top: 10px;
+        }
+        
+        .ex-detail-section h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 8.5pt;
+            font-weight: 700;
+            color: #0b0f19;
+            margin-top: 0;
+            margin-bottom: 4px;
+            text-transform: uppercase;
+            border-bottom: 1px solid #f1f5f9;
+            padding-bottom: 2px;
+        }
+        
+        .ex-detail-section p {
+            font-size: 8.5pt;
+            color: #475569;
+            margin: 0;
+            text-align: left;
+        }
+    </style>
+    
+    </head>
+    <body>
+    
+
+    <div class="cover-page">
+        <div class="cover-accent-line"></div>
+        <div class="cover-title-group">
+            <div class="cover-tagline">Elite Training Manual</div>
+            <h1 class="cover-title">THE ART OF CLASSIC AESTHETICS</h1>
+            <div class="cover-subtitle">A Science-Based 6-Day Elite Hypertrophy Program Optimized for Natural Lifters Seeking a Wide V-Taper, Upper Chest Fullness, and 3D Shoulders.</div>
+        </div>
+        <div class="cover-bottom">
+            <div>
+                <div class="cover-author">COACH A. M. HARIS, CSCS</div>
+                <div class="cover-credentials">IFBB Pro Coach &bull; Certified Strength & Conditioning Coach &bull; Sports Nutritionist</div>
+            </div>
+            <div class="cover-version">
+                <div>Edition 2026.1</div>
+                <div>Premium E-Book</div>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="page-break"></div>
+    <h1>TABLE OF CONTENTS</h1>
+    <ul class="toc-list">
+        <li class="toc-item"><span class="toc-title">Welcome & IFBB Pro Coaching Philosophy</span><span class="toc-dots"></span><span class="toc-page">4</span></li>
+        <li class="toc-item"><span class="toc-title">Chapter 1: Scientific Training Principles</span><span class="toc-dots"></span><span class="toc-page">6</span></li>
+        <li class="toc-item"><span class="toc-title">Chapter 2: The Progression & Periodization System</span><span class="toc-dots"></span><span class="toc-page">10</span></li>
+        <li class="toc-item"><span class="toc-title">Chapter 3: Weekly Workout Split Overview</span><span class="toc-dots"></span><span class="toc-page">12</span></li>
+        <li class="toc-item"><span class="toc-title">Chapter 4: Daily Workout Routines</span><span class="toc-dots"></span><span class="toc-page">14</span></li>
+        <li class="toc-item"><span class="toc-title">&nbsp;&nbsp;&bull; Monday: Chest + Triceps (Hypertrophy Focus)</span><span class="toc-dots"></span><span class="toc-page">15</span></li>
+        <li class="toc-item"><span class="toc-title">&nbsp;&nbsp;&bull; Tuesday: Back + Biceps (Lat Width Focus)</span><span class="toc-dots"></span><span class="toc-page">17</span></li>
+        <li class="toc-item"><span class="toc-title">&nbsp;&nbsp;&bull; Wednesday: Legs (Quad Focus) + Calves + Core</span><span class="toc-dots"></span><span class="toc-page">19</span></li>
+        <li class="toc-item"><span class="toc-title">&nbsp;&nbsp;&bull; Thursday: Shoulders + Rear Delts + Traps</span><span class="toc-dots"></span><span class="toc-page">21</span></li>
+        <li class="toc-item"><span class="toc-title">&nbsp;&nbsp;&bull; Friday: Upper Chest + Back Thickness (Priority Day)</span><span class="toc-dots"></span><span class="toc-page">23</span></li>
+        <li class="toc-item"><span class="toc-title">&nbsp;&nbsp;&bull; Saturday: Arms + Side Delts + Forearms</span><span class="toc-dots"></span><span class="toc-page">25</span></li>
+        <li class="toc-item"><span class="toc-title">&nbsp;&nbsp;&bull; Sunday: Active Recovery at Home</span><span class="toc-dots"></span><span class="toc-page">27</span></li>
+        <li class="toc-item"><span class="toc-title">Chapter 5: Exercise Masterclass & Biomechanics</span><span class="toc-dots"></span><span class="toc-page">28</span></li>
+        <li class="toc-item"><span class="toc-title">Chapter 6: Cardio & Conditioning for Aesthetics</span><span class="toc-dots"></span><span class="toc-page">34</span></li>
+        <li class="toc-item"><span class="toc-title">Chapter 7: Complete Weekly Core Routine</span><span class="toc-dots"></span><span class="toc-page">36</span></li>
+        <li class="toc-item"><span class="toc-title">Chapter 8: Mobility & Flexibility Blueprint</span><span class="toc-dots"></span><span class="toc-page">38</span></li>
+        <li class="toc-item"><span class="toc-title">Chapter 9: Elite Muscle-Building Nutrition</span><span class="toc-dots"></span><span class="toc-page">41</span></li>
+        <li class="toc-item"><span class="toc-title">Chapter 10: Evidence-Based Supplement Guide</span><span class="toc-dots"></span><span class="toc-page">45</span></li>
+        <li class="toc-item"><span class="toc-title">Chapter 11: Recovery Optimization & Joint Health</span><span class="toc-dots"></span><span class="toc-page">48</span></li>
+        <li class="toc-item"><span class="toc-title">Chapter 12: Progress Tracking Sheets</span><span class="toc-dots"></span><span class="toc-page">50</span></li>
+        <li class="toc-item"><span class="toc-title">Chapter 13: Etiquette, FAQ & Transformation Timeline</span><span class="toc-dots"></span><span class="toc-page">53</span></li>
+    </ul>
+    
+
+    <div class="page-break"></div>
+    <h1>WELCOME &amp; IFBB PRO PHILOSOPHY</h1>
+    <p>Welcome to <strong>The Art of Classic Aesthetics</strong>. As an IFBB Pro Bodybuilding Coach, Certified Strength and Conditioning Specialist (CSCS), and exercise scientist with over two decades of coaching experience, I have seen every training trend come and go. Most fitness routines you find online are either "bro-splits" designed for individuals using external assistance or overly simplistic starter programs that fail to address the specific visual proportions that define an outstanding, classical physique.</p>
+    <p>This program is designed specifically for <strong>natural athletes</strong> who want to build a classical, symmetrical, and athletic physique. We are not aiming for the look of a bodybuilding "monster" where pure mass overrides shape. Instead, we are modeling our proportions on the golden era of physical culture—a broad shoulder girdle, a sweeping V-taper lat spread, a fully developed upper chest, clean athletic quadriceps, and a tight, sculpted core.</p>
+    
+    <div class="callout">
+        <div class="callout-title">The Natural Aesthetic Philosophy</div>
+        <div class="callout-content">
+            Natural hypertrophy is governed by strict physiological limits. Without exogenous hormones, your body has a finite recovery capacity. Therefore, every single set must be an active investment. Unnecessary "junk volume" is the enemy of progress. We optimize the stimulus-to-fatigue ratio of every exercise, focusing on mechanical tension, controlled eccentrics, and targeted anatomical recruitment.
+        </div>
+    </div>
+
+    <h2>Defining the Aesthetic Target Proportions</h2>
+    <p>To build a classic, aesthetic physique, we prioritize key muscle groups that physically widen the upper body while keeping the midsection tight. The primary focus of this program is on:
+    <ul>
+        <li><strong>Clavicular Head of the Pectoralis Major (Upper Chest):</strong> Creating a full shelf of muscle beneath the collarbones, preventing the "drooping" chest look.</li>
+        <li><strong>Lateral Head of the Deltoid (Side Delts):</strong> Widening the shoulder girdle to create a strong silhouette, even in clothing.</li>
+        <li><strong>Latissimus Dorsi (Lats):</strong> Specifically targeting the lower and outer lats to create the "sweeping" V-taper that visually shrinks the waist.</li>
+        <li><strong>Triceps &amp; Biceps:</strong> Developing balanced, detailed arms that look full from all angles, prioritizing the lateral head of the triceps and the long head of the biceps.</li>
+        <li><strong>Balanced Lower Body:</strong> Developing swept quadriceps, detailed hamstrings, and structured calves without building an excessively thick waist or glutes that disrupt classic proportions.</li>
+    </ul>
+    </p>
+
+    <div class="science-box">
+        <div class="science-title">The Biomechanical Rule of Proportions</div>
+        <div class="science-content">
+            Aesthetic symmetry is a visual illusion. By increasing the cross-sectional area of the side delts and latissimus dorsi by just 10-15%, we can visually reduce the appearance of a wide hip structure or thicker waist. This program places these priority groups at the start of training sessions when neurological fatigue is low, ensuring maximum force production and high-quality motor unit recruitment.
+        </div>
+    </div>
+    
+
+    <div class="page-break"></div>
+    <h1>CHAPTER 1: SCIENTIFIC TRAINING PRINCIPLES</h1>
+    <p>Natural muscle growth is not governed by effort alone; it is governed by cellular signaling. To trigger maximal protein synthesis, we must understand and execute the fundamental principles of exercise science. This program rejects guesswork and is built entirely upon peer-reviewed, evidence-based training methodologies.</p>
+
+    <h2>1. Mechanical Tension: The Primary Driver of Hypertrophy</h2>
+    <p>Mechanical tension is the absolute king of muscle growth. It is experienced when a muscle fibers are actively stretched under load. High-threshold motor units—the ones responsible for the largest amount of growth—are only recruited when the muscle experiences significant mechanical stress, particularly close to muscular failure.</p>
+    <p>To maximize mechanical tension, you must control the load throughout the entire range of motion, ensuring that the target muscle is performing the work rather than momentum or surrounding muscle groups.</p>
+
+    <h2>2. Controlled Eccentrics &amp; Muscle Stretch</h2>
+    <p>Research confirms that the eccentric (lowering) phase of a lift is highly hypertrophic. When you drop a weight quickly, you miss out on nearly 50% of the stimulus. In this program, we implement a strict <strong>3-second eccentric phase</strong> on almost all movements. Furthermore, modern literature shows that training a muscle at long muscle lengths (the deep stretch) triggers greater hypertrophy. We do not cut reps short; we emphasize the deep stretch on every single rep.</p>
+
+    <h2>3. Progressive Overload: The Law of Adaptation</h2>
+    <p>If you lift the same weights for the same reps next week as you did this week, your body has no physiological reason to grow. You must systematically challenge your muscles. We do this through <strong>Double Progression</strong>:
+    <ol>
+        <li>First, increase your repetitions within the designated range with a constant weight.</li>
+        <li>Once you hit the top of the rep range for all prescribed sets, increase the weight by the smallest increment available (e.g., 2.5 lbs or 1 kg).</li>
+        <li>Drop back to the bottom of the rep range with the new weight and repeat the process.</li>
+    </ol>
+    </p>
+
+    <h2>4. Reps in Reserve (RIR) &amp; Fatigue Management</h2>
+    <p>Training to absolute failure on every set creates massive central nervous system (CNS) fatigue, which drastically reduces your ability to perform on subsequent sets and exercises. This program utilizes the <strong>Reps in Reserve (RIR)</strong> scale to track intensity:
+    <ul>
+        <li><strong>3 RIR:</strong> 3 reps away from absolute failure. (Warm-up / Initial working sets)</li>
+        <li><strong>2 RIR:</strong> 2 reps away from absolute failure. (Standard working sets)</li>
+        <li><strong>1 RIR:</strong> 1 rep away from absolute failure. (Heavy compound working sets)</li>
+        <li><strong>0 RIR:</strong> Muscular failure. Used selectively on the final set of isolation movements.</li>
+    </ul>
+    </p>
+
+    <div class="science-box">
+        <div class="science-title">Volume Landmarks: MEV vs. MRV</div>
+        <div class="science-content">
+            <strong>Minimum Effective Volume (MEV)</strong> is the smallest amount of training volume required to make progress. <strong>Maximum Recoverable Volume (MRV)</strong> is the limit of your body's ability to repair and grow. Natural lifters often train past their MRV, leading to chronic fatigue, joint wear, and muscle loss. This program targets the "sweet spot" of 12 to 18 high-quality working sets per muscle group per week, distributed across high-frequency sessions to optimize recovery and protein synthesis.
+        </div>
+    </div>
+    
+
+    <div class="page-break"></div>
+    <h1>CHAPTER 2: PROGRESSION &amp; PERIODIZATION SYSTEM</h1>
+    <p>Many lifters plateau because they follow a static workout plan. To keep your muscles adapting, you must follow a structured progression and periodization system. This program operates on a 12-week macrocycle, divided into three 4-week microcycles, followed by a planned deload.</p>
+
+    <h2>The 12-Week Periodization Structure</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Phase</th>
+                <th>Weeks</th>
+                <th>Focus</th>
+                <th>Primary RIR Target</th>
+                <th>Deload Trigger</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Phase 1: Adaptation</strong></td>
+                <td>Weeks 1-4</td>
+                <td>Neurological adaptation, form mastery, base volume establishment.</td>
+                <td>2 RIR on all main lifts</td>
+                <td>None (End of Week 4 mini-assessment)</td>
+            </tr>
+            <tr>
+                <td><strong>Phase 2: Overload</strong></td>
+                <td>Weeks 5-8</td>
+                <td>Intense progressive overload, increasing weights and volume.</td>
+                <td>1-2 RIR on compound lifts</td>
+                <td>Active recovery week if joints ache</td>
+            </tr>
+            <tr>
+                <td><strong>Phase 3: Peak Hypertrophy</strong></td>
+                <td>Weeks 9-11</td>
+                <td>Maximal mechanical tension, training close to failure, peak volume.</td>
+                <td>0-1 RIR on final sets</td>
+                <td>Mandatory Deload at Week 12</td>
+            </tr>
+            <tr>
+                <td><strong>Deload Phase</strong></td>
+                <td>Week 12</td>
+                <td>Joint healing, systemic fatigue reduction, CNS reset.</td>
+                <td>4 RIR (50% intensity &amp; volume)</td>
+                <td>Transition to new block</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>How to Break Plateaus</h2>
+    <p>When you cannot add reps or weight for three consecutive workouts, you have hit a plateau. Do not force it by using poor form. Follow these three evidence-based plateau-busting strategies:
+    <ul>
+        <li><strong>The 10% Reset:</strong> Reduce the working weight by 10% on that specific exercise. Focus on an even slower eccentric (4 seconds) and absolute strict form. Over the next 2-3 weeks, build the weight back up. You will frequently blow past your old plateau.</li>
+        <li><strong>Exercise Substitution:</strong> Swap the stagnant exercise with its designated alternative (provided in the daily workout tables). A slightly different joint angle or implement can recruit fresh motor units and restart progression.</li>
+        <li><strong>Micro-Loading:</strong> If your gym has fractional plates, use them. Adding 1 lb (0.5 kg) to a barbell is still progressive overload. Small increases add up to massive changes over 6-12 months.</li>
+    </ul>
+    </p>
+
+    <div class="callout">
+        <div class="callout-title">The Deload Week Protocol</div>
+        <div class="callout-content">
+            During the Week 12 deload, do not stay out of the gym entirely. Active deloading keeps synovial fluid flowing in your joints and preserves motor patterns. Perform your regular workouts, but reduce the weights by 40% and cut the sets in half. Never train past an RIR of 4 during a deload.
+        </div>
+    </div>
+    
+
+    <div class="page-break"></div>
+    <h1>CHAPTER 3: WEEKLY WORKOUT SPLIT OVERVIEW</h1>
+    <p>To train 6 days a week naturally without burning out, we must carefully structure our weekly split to avoid overlapping muscle soreness. This split is anatomically optimized to ensure that when one muscle group is working, the opposing or accessory muscle groups are recovering.</p>
+
+    <h2>Weekly Training Calendar</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Day</th>
+                <th>Workout Focus</th>
+                <th>Target Muscle Groups</th>
+                <th>Aesthetic Priority</th>
+                <th>Estimated Duration</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Monday</strong></td>
+                <td>Chest &amp; Triceps</td>
+                <td>Pectoralis Major (Clavicular/Sternal), Triceps (Lateral/Long/Medial Heads)</td>
+                <td>Upper Chest Shelf, Triceps Horseshoe</td>
+                <td>65 - 75 Mins</td>
+            </tr>
+            <tr>
+                <td><strong>Tuesday</strong></td>
+                <td>Back &amp; Biceps</td>
+                <td>Latissimus Dorsi, Teres Major, Biceps Brachii, Brachialis</td>
+                <td>V-Taper Lat Width, Peak Biceps height</td>
+                <td>65 - 75 Mins</td>
+            </tr>
+            <tr>
+                <td><strong>Wednesday</strong></td>
+                <td>Legs (Quad Focus) &amp; Core</td>
+                <td>Quads (Vastus Lateralis/Medialis), Calves, Rectus Abdominis</td>
+                <td>Athletic Quad Sweep, Clean Calves, Sculpted Abs</td>
+                <td>70 - 80 Mins</td>
+            </tr>
+            <tr>
+                <td><strong>Thursday</strong></td>
+                <td>Shoulders &amp; Rear Delts</td>
+                <td>Lateral Deltoid, Posterior Deltoid, Upper Trapezius</td>
+                <td>3D Shoulder Caps, Upper Back Detail</td>
+                <td>60 - 70 Mins</td>
+            </tr>
+            <tr>
+                <td><strong>Friday</strong></td>
+                <td>Upper Chest &amp; Back Thickness</td>
+                <td>Clavicular Pectoralis, Mid/Lower Traps, Rhomboids, Lower Lats</td>
+                <td>Symmetry Optimization, Mid-Back Detail</td>
+                <td>65 - 75 Mins</td>
+            </tr>
+            <tr>
+                <td><strong>Saturday</strong></td>
+                <td>Arms &amp; Side Delts</td>
+                <td>Biceps, Triceps, Lateral Delts, Forearm Extensors/Flexors</td>
+                <td>Complete Arm Thickness, Shoulder Width</td>
+                <td>60 - 70 Mins</td>
+            </tr>
+            <tr>
+                <td><strong>Sunday</strong></td>
+                <td>Active Recovery at Home</td>
+                <td>Full-Body Mobility, Cardiovascular System, CNS Recovery</td>
+                <td>Systemic Decompression, Joint Health</td>
+                <td>30 - 45 Mins</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="science-box">
+        <div class="science-title">The Scientific Rationale for a 6-Day Split</div>
+        <div class="science-content">
+            Research shows that muscle protein synthesis (MPS) remains elevated for approximately 24 to 48 hours following a resistance training session in natural lifters. By training each muscle group twice per week (e.g., Chest on Monday &amp; Friday; Back on Tuesday &amp; Friday; Side Delts on Thursday &amp; Saturday), we keep MPS elevated nearly 100% of the week, yielding significantly greater annual hypertrophy compared to a once-a-week "bro split".
+        </div>
+    </div>
+    
+
+    <div class="page-break"></div>
+    <h1>CHAPTER 4: DAILY WORKOUT ROUTINES</h1>
+    <p>This chapter contains the exact daily training blueprints. For every single day, you must perform the designated warm-up, mobility drills, and activation exercises before touching heavy weights. This prepares the central nervous system, increases synovial fluid in the joints, and recruits correct muscle fibers, drastically reducing injury risk.</p>
+    <p>Pay strict attention to the <strong>Tempo</strong> and <strong>RIR</strong> columns. Tempo is written in a standard 4-digit code (e.g., 3-1-1-0):
+    <ul>
+        <li><strong>1st Digit (3):</strong> Eccentric phase in seconds (lowering the load).</li>
+        <li><strong>2nd Digit (1):</strong> Isometric pause at the stretch position in seconds.</li>
+        <li><strong>3rd Digit (1):</strong> Concentric phase in seconds (lifting the load).</li>
+        <li><strong>4th Digit (0):</strong> Peak contraction hold at the top in seconds.</li>
+    </ul>
+    </p>
+    
+
+    <div class="page-break"></div>
+    <h2>MONDAY: CHEST + TRICEPS (HYPERTROPHY FOCUS)</h2>
+    <p><strong>Total Duration:</strong> 70 Minutes &nbsp;|&nbsp; <strong>CNS Intensity:</strong> High &nbsp;|&nbsp; <strong>Target:</strong> Chest Width &amp; Lateral Triceps</p>
+    
+    <h3>1. Warm-Up &amp; Mobility (10 Minutes)</h3>
+    <ul>
+        <li><strong>Arm Circles:</strong> 15 reps forward, 15 reps backward (lubricates shoulder joint).</li>
+        <li><strong>Band Pull-Aparts:</strong> 2 sets of 15 reps (activates rear delts, traps, and rotator cuff).</li>
+        <li><strong>Dumbbell External Rotation:</strong> 2 sets of 12 reps with light weight (stabilizes rotator cuff).</li>
+        <li><strong>Pec Dec Activation:</strong> 2 sets of 15 reps with very light load (creates initial mind-muscle connection).</li>
+    </ul>
+
+    <h3>Monday Workout Table</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Exercise</th>
+                <th>Target Muscle</th>
+                <th>Type</th>
+                <th>Sets</th>
+                <th>Reps</th>
+                <th>Tempo</th>
+                <th>RIR</th>
+                <th>Rest</th>
+                <th>Alternative</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>1. Incline Barbell Bench Press</strong></td>
+                <td>Upper Chest (Clavicular)</td>
+                <td>Free Weight</td>
+                <td>3</td>
+                <td>6-8</td>
+                <td><span class="badge badge-tempo">3-1-1-0</span></td>
+                <td><span class="badge badge-rir">2 RIR</span></td>
+                <td><span class="badge badge-rest">3 Min</span></td>
+                <td>Incline DB Press</td>
+            </tr>
+            <tr>
+                <td><strong>2. Flat Dumbbell Press</strong></td>
+                <td>Mid Chest (Sternal)</td>
+                <td>Free Weight</td>
+                <td>3</td>
+                <td>8-10</td>
+                <td><span class="badge badge-tempo">3-0-1-0</span></td>
+                <td><span class="badge badge-rir">2 RIR</span></td>
+                <td><span class="badge badge-rest">2.5 Min</span></td>
+                <td>Flat Machine Press</td>
+            </tr>
+            <tr>
+                <td><strong>3. 30&deg; Incline DB Flye</strong></td>
+                <td>Upper Chest (Stretch)</td>
+                <td>Free Weight</td>
+                <td>3</td>
+                <td>10-12</td>
+                <td><span class="badge badge-tempo">4-1-1-0</span></td>
+                <td><span class="badge badge-rir">2 RIR</span></td>
+                <td><span class="badge badge-rest">2 Min</span></td>
+                <td>Incline Cable Flye</td>
+            </tr>
+            <tr>
+                <td><strong>4. Weighted Chest Dips</strong></td>
+                <td>Lower Chest / Triceps</td>
+                <td>Bodyweight+</td>
+                <td>2</td>
+                <td>10-12</td>
+                <td><span class="badge badge-tempo">3-0-1-0</span></td>
+                <td><span class="badge badge-rir">1 RIR</span></td>
+                <td><span class="badge badge-rest">2 Min</span></td>
+                <td>Decline DB Press</td>
+            </tr>
+            <tr>
+                <td><strong>5. Dual Rope Pushdown</strong></td>
+                <td>Triceps Lateral Head</td>
+                <td>Machine</td>
+                <td>3</td>
+                <td>10-12</td>
+                <td><span class="badge badge-tempo">3-0-1-1</span></td>
+                <td><span class="badge badge-rir">1 RIR</span></td>
+                <td><span class="badge badge-rest">90 Sec</span></td>
+                <td>Straight Bar Pushdown</td>
+            </tr>
+            <tr>
+                <td><strong>6. Overhead Cable Extension</strong></td>
+                <td>Triceps Long Head</td>
+                <td>Machine</td>
+                <td>3</td>
+                <td>12-15</td>
+                <td><span class="badge badge-tempo">3-1-1-0</span></td>
+                <td><span class="badge badge-rir">0-1 RIR</span></td>
+                <td><span class="badge badge-rest">90 Sec</span></td>
+                <td>EZ-Bar Skull Crusher</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="callout">
+        <div class="callout-title">Monday Coaching Cues</div>
+        <div class="callout-content">
+            <strong>Incline Bench:</strong> Retract your scapula and lock it down. Keep your elbows tucked at a 45-degree angle. Touch the bar to your upper chest/collarbone area, pause for 1 second, then press aggressively. Do not flare your elbows.
+            <br><strong>Dual Rope Pushdown:</strong> Do not let your shoulders roll forward. Flaring the ropes out at the bottom isolates the lateral head of the triceps. Keep your elbows locked at your sides.
+        </div>
+    </div>
+    
+
+    <div class="page-break"></div>
+    <h2>TUESDAY: BACK + BICEPS (LAT WIDTH FOCUS)</h2>
+    <p><strong>Total Duration:</strong> 70 Minutes &nbsp;|&nbsp; <strong>CNS Intensity:</strong> High &nbsp;|&nbsp; <strong>Target:</strong> Outer Lats &amp; Biceps Long Head</p>
+    
+    <h3>1. Warm-Up &amp; Mobility (10 Minutes)</h3>
+    <ul>
+        <li><strong>Scapular Pull-Ups:</strong> 2 sets of 12 reps (activates lower traps and lat recruitment).</li>
+        <li><strong>Band Face Pulls:</strong> 2 sets of 15 reps (warms up rear delts and rotator cuffs).</li>
+        <li><strong>Thoracic Extension on Foam Roller:</strong> 2 minutes (improves spine mobility for pulling).</li>
+    </ul>
+
+    <h3>Tuesday Workout Table</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Exercise</th>
+                <th>Target Muscle</th>
+                <th>Type</th>
+                <th>Sets</th>
+                <th>Reps</th>
+                <th>Tempo</th>
+                <th>RIR</th>
+                <th>Rest</th>
+                <th>Alternative</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>1. Weighted Pull-Ups</strong></td>
+                <td>Latissimus Dorsi (Width)</td>
+                <td>Bodyweight+</td>
+                <td>3</td>
+                <td>6-8</td>
+                <td><span class="badge badge-tempo">3-0-1-1</span></td>
+                <td><span class="badge badge-rir">2 RIR</span></td>
+                <td><span class="badge badge-rest">3 Min</span></td>
+                <td>Lat Pulldown (Wide)</td>
+            </tr>
+            <tr>
+                <td><strong>2. Neutral Grip Pulldown</strong></td>
+                <td>Lower Latissimus Dorsi</td>
+                <td>Machine</td>
+                <td>3</td>
+                <td>8-10</td>
+                <td><span class="badge badge-tempo">3-0-1-1</span></td>
+                <td><span class="badge badge-rir">2 RIR</span></td>
+                <td><span class="badge badge-rest">2 Min</span></td>
+                <td>Underhand Lat Pulldown</td>
+            </tr>
+            <tr>
+                <td><strong>3. Chest-Supported T-Bar Row</strong></td>
+                <td>Rhomboids / Upper Back</td>
+                <td>Machine</td>
+                <td>3</td>
+                <td>8-10</td>
+                <td><span class="badge badge-tempo">3-0-1-1</span></td>
+                <td><span class="badge badge-rir">2 RIR</span></td>
+                <td><span class="badge badge-rest">2 Min</span></td>
+                <td>Seated Cable Row</td>
+            </tr>
+            <tr>
+                <td><strong>4. Incline Dumbbell Curl</strong></td>
+                <td>Biceps Long Head (Stretch)</td>
+                <td>Free Weight</td>
+                <td>3</td>
+                <td>10-12</td>
+                <td><span class="badge badge-tempo">3-0-1-1</span></td>
+                <td><span class="badge badge-rir">2 RIR</span></td>
+                <td><span class="badge badge-rest">90 Sec</span></td>
+                <td>Preacher DB Curl</td>
+            </tr>
+            <tr>
+                <td><strong>5. Standing Cable Curl</strong></td>
+                <td>Biceps Short Head (Peak)</td>
+                <td>Machine</td>
+                <td>3</td>
+                <td>12-15</td>
+                <td><span class="badge badge-tempo">3-0-1-1</span></td>
+                <td><span class="badge badge-rir">1-2 RIR</span></td>
+                <td><span class="badge badge-rest">90 Sec</span></td>
+                <td>EZ-Bar Barbell Curl</td>
+            </tr>
+            <tr>
+                <td><strong>6. Dumbbell Hammer Curl</strong></td>
+                <td>Brachialis / Forearms</td>
+                <td>Free Weight</td>
+                <td>2</td>
+                <td>10-12</td>
+                <td><span class="badge badge-tempo">3-0-1-0</span></td>
+                <td><span class="badge badge-rir">1 RIR</span></td>
+                <td><span class="badge badge-rest">90 Sec</span></td>
+                <td>Rope Cable Hammer Curl</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="callout">
+        <div class="callout-title">Tuesday Coaching Cues</div>
+        <div class="callout-content">
+            <strong>Weighted Pull-Ups:</strong> Focus on pulling your elbows down to your pockets, not just pulling your chin over the bar. Squeeze your shoulder blades together at the top.
+            <br><strong>Incline DB Curl:</strong> Set the bench at a 45-60 degree angle. Let your arms hang straight down behind your body. Keep your elbows pinned back as you curl, maximizing the stretch at the bottom.
+        </div>
+    </div>
+    
+
+    <div class="page-break"></div>
+    <h2>WEDNESDAY: LEGS (QUAD FOCUS) + CALVES + CORE</h2>
+    <p><strong>Total Duration:</strong> 75 Minutes &nbsp;|&nbsp; <strong>CNS Intensity:</strong> Very High &nbsp;|&nbsp; <strong>Target:</strong> Quads, Calves, &amp; Abs</p>
+    
+    <h3>1. Warm-Up &amp; Mobility (10 Minutes)</h3>
+    <ul>
+        <li><strong>World's Greatest Stretch:</strong> 6 reps per side (opens hips, thoracic spine, hamstrings).</li>
+        <li><strong>Goblet Squat (Light):</strong> 2 sets of 10 reps with a 3-second pause at the bottom (hip mobility).</li>
+        <li><strong>Leg Swings:</strong> 15 reps forward/back, 15 reps side-to-side (warm up hip flexors/glutes).</li>
+    </ul>
+
+    <h3>Wednesday Workout Table</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Exercise</th>
+                <th>Target Muscle</th>
+                <th>Type</th>
+                <th>Sets</th>
+                <th>Reps</th>
+                <th>Tempo</th>
+                <th>RIR</th>
+                <th>Rest</th>
+                <th>Alternative</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>1. Barbell Back Squat</strong></td>
+                <td>Quads (Vastus Lateralis)</td>
+                <td>Free Weight</td>
+                <td>3</td>
+                <td>6-8</td>
+                <td><span class="badge badge-tempo">3-1-1-0</span></td>
+                <td><span class="badge badge-rir">2 RIR</span></td>
+                <td><span class="badge badge-rest">3 Min</span></td>
+                <td>Leg Press</td>
+            </tr>
+            <tr>
+                <td><strong>2. Bulgarian Split Squat</strong></td>
+                <td>Quads / Glutes</td>
+                <td>Free Weight</td>
+                <td>3</td>
+                <td>8-10/leg</td>
+                <td><span class="badge badge-tempo">3-0-1-0</span></td>
+                <td><span class="badge badge-rir">2 RIR</span></td>
+                <td><span class="badge badge-rest">2 Min</span></td>
+                <td>DB Walking Lunges</td>
+            </tr>
+            <tr>
+                <td><strong>3. Leg Extensions</strong></td>
+                <td>Quads (Shortened)</td>
+                <td>Machine</td>
+                <td>3</td>
+                <td>12-15</td>
+                <td><span class="badge badge-tempo">3-0-1-1</span></td>
+                <td><span class="badge badge-rir">1 RIR</span></td>
+                <td><span class="badge badge-rest">90 Sec</span></td>
+                <td>Sissy Squat Machine</td>
+            </tr>
+            <tr>
+                <td><strong>4. Seated Leg Curl</strong></td>
+                <td>Hamstrings (Biceps Femoris)</td>
+                <td>Machine</td>
+                <td>3</td>
+                <td>10-12</td>
+                <td><span class="badge badge-tempo">3-0-1-1</span></td>
+                <td><span class="badge badge-rir">1-2 RIR</span></td>
+                <td><span class="badge badge-rest">90 Sec</span></td>
+                <td>Lying Leg Curl</td>
+            </tr>
+            <tr>
+                <td><strong>5. Standing Calf Raise</strong></td>
+                <td>Calves (Gastrocnemius)</td>
+                <td>Machine</td>
+                <td>4</td>
+                <td>12-15</td>
+                <td><span class="badge badge-tempo">3-2-1-1</span></td>
+                <td><span class="badge badge-rir">1 RIR</span></td>
+                <td><span class="badge badge-rest">90 Sec</span></td>
+                <td>Leg Press Calf Raise</td>
+            </tr>
+            <tr>
+                <td><strong>6. Hanging Knee Raise</strong></td>
+                <td>Lower Core (Rectus Abd)</td>
+                <td>Bodyweight</td>
+                <td>3</td>
+                <td>12-15</td>
+                <td><span class="badge badge-tempo">3-0-1-1</span></td>
+                <td><span class="badge badge-rir">1 RIR</span></td>
+                <td><span class="badge badge-rest">60 Sec</span></td>
+                <td>Decline Crunch</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="callout">
+        <div class="callout-title">Wednesday Coaching Cues</div>
+        <div class="callout-content">
+            <strong>Barbell Squat:</strong> Keep your core tight. Imagine screwing your feet into the floor. Break at the hips and knees simultaneously. Pause briefly at the bottom before driving up through your mid-foot.
+            <br><strong>Standing Calf Raise:</strong> Do not bounce. Lower the heel slowly over 3 seconds, hold the deep stretch for 2 seconds to release elastic energy from the Achilles tendon, press to peak contraction, and hold for 1 second.
+        </div>
+    </div>
+    
+
+    <div class="page-break"></div>
+    <h2>THURSDAY: SHOULDERS + REAR DELTS + TRAPS</h2>
+    <p><strong>Total Duration:</strong> 65 Minutes &nbsp;|&nbsp; <strong>CNS Intensity:</strong> Medium &nbsp;|&nbsp; <strong>Target:</strong> 3D Shoulder Cap &amp; Upper Back</p>
+    
+    <h3>1. Warm-Up &amp; Mobility (10 Minutes)</h3>
+    <ul>
+        <li><strong>Y-T-W Drills:</strong> 10 reps of each with bodyweight (activates scapular retractors/rotators).</li>
+        <li><strong>Band External Rotation:</strong> 2 sets of 15 reps (warms up infraspinatus/teres minor).</li>
+        <li><strong>Dumbbell Press (Light):</strong> 2 sets of 12 reps (CNS activation).</li>
+    </ul>
+
+    <h3>Thursday Workout Table</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Exercise</th>
+                <th>Target Muscle</th>
+                <th>Type</th>
+                <th>Sets</th>
+                <th>Reps</th>
+                <th>Tempo</th>
+                <th>RIR</th>
+                <th>Rest</th>
+                <th>Alternative</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>1. Seated Dumbbell Press</strong></td>
+                <td>Anterior / Side Deltoids</td>
+                <td>Free Weight</td>
+                <td>3</td>
+                <td>8-10</td>
+                <td><span class="badge badge-tempo">3-1-1-0</span></td>
+                <td><span class="badge badge-rir">2 RIR</span></td>
+                <td><span class="badge badge-rest">2.5 Min</span></td>
+                <td>Smith Machine Shoulder Press</td>
+            </tr>
+            <tr>
+                <td><strong>2. Standing Cable Lateral Raise</strong></td>
+                <td>Side Deltoids (Stretch)</td>
+                <td>Machine</td>
+                <td>4</td>
+                <td>12-15</td>
+                <td><span class="badge badge-tempo">3-0-1-1</span></td>
+                <td><span class="badge badge-rir">1-2 RIR</span></td>
+                <td><span class="badge badge-rest">90 Sec</span></td>
+                <td>Incline DB Lateral Raise</td>
+            </tr>
+            <tr>
+                <td><strong>3. Dumbbell Lateral Raise</strong></td>
+                <td>Side Deltoids (Shortened)</td>
+                <td>Free Weight</td>
+                <td>3</td>
+                <td>10-12</td>
+                <td><span class="badge badge-tempo">2-0-1-0</span></td>
+                <td><span class="badge badge-rir">1 RIR</span></td>
+                <td><span class="badge badge-rest">90 Sec</span></td>
+                <td>Machine Lateral Raise</td>
+            </tr>
+            <tr>
+                <td><strong>4. Cable Face Pulls</strong></td>
+                <td>Rear Deltoids / Rotators</td>
+                <td>Machine</td>
+                <td>3</td>
+                <td>12-15</td>
+                <td><span class="badge badge-tempo">3-0-1-1</span></td>
+                <td><span class="badge badge-rir">1 RIR</span></td>
+                <td><span class="badge badge-rest">90 Sec</span></td>
+                <td>Chest-Supported Rear DB Flye</td>
+            </tr>
+            <tr>
+                <td><strong>5. Dumbbell Rear Delt Flye</strong></td>
+                <td>Rear Deltoids (Stretch)</td>
+                <td>Free Weight</td>
+                <td>3</td>
+                <td>12-15</td>
+                <td><span class="badge badge-tempo">2-0-1-0</span></td>
+                <td><span class="badge badge-rir">1 RIR</span></td>
+                <td><span class="badge badge-rest">90 Sec</span></td>
+                <td>Pec Dec Rear Delt Flye</td>
+            </tr>
+            <tr>
+                <td><strong>6. Dumbbell Shrugs</strong></td>
+                <td>Upper Trapezius</td>
+                <td>Free Weight</td>
+                <td>3</td>
+                <td>10-12</td>
+                <td><span class="badge badge-tempo">3-0-1-1</span></td>
+                <td><span class="badge badge-rir">1-2 RIR</span></td>
+                <td><span class="badge badge-rest">2 Min</span></td>
+                <td>Barbell Shrugs</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="callout">
+        <div class="callout-title">Thursday Coaching Cues</div>
+        <div class="callout-content">
+            <strong>Cable Lateral Raise:</strong> Place the cable attachment at ankle height. Stand slightly in front of the cable column. Pull the cable across your body, pushing your hand outwards, not just upwards.
+            <br><strong>Face Pulls:</strong> Pull the rope towards your nose. At the end of the movement, flare your hands apart to create external rotation of the shoulders. Keep your chest up and traps relaxed.
+        </div>
+    </div>
+    
+
+    <div class="page-break"></div>
+    <h2>FRIDAY: UPPER CHEST + BACK THICKNESS (PRIORITY DAY)</h2>
+    <p><strong>Total Duration:</strong> 70 Minutes &nbsp;|&nbsp; <strong>CNS Intensity:</strong> High &nbsp;|&nbsp; <strong>Target:</strong> Clavicular Pecs &amp; Mid Back</p>
+    
+    <h3>1. Warm-Up &amp; Mobility (10 Minutes)</h3>
+    <ul>
+        <li><strong>Scapular Push-Ups:</strong> 2 sets of 15 reps (activates serratus anterior).</li>
+        <li><strong>Band Face Pull-Aparts:</strong> 2 sets of 15 reps (rear delt/rotator cuff warmth).</li>
+        <li><strong>Thoracic Mobility (Windmills):</strong> 10 reps per side (opens chest and mid back).</li>
+    </ul>
+
+    <h3>Friday Workout Table</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Exercise</th>
+                <th>Target Muscle</th>
+                <th>Type</th>
+                <th>Sets</th>
+                <th>Reps</th>
+                <th>Tempo</th>
+                <th>RIR</th>
+                <th>Rest</th>
+                <th>Alternative</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>1. 30&deg; Incline DB Press</strong></td>
+                <td>Upper Chest (Clavicular)</td>
+                <td>Free Weight</td>
+                <td>3</td>
+                <td>8-10</td>
+                <td><span class="badge badge-tempo">3-1-1-0</span></td>
+                <td><span class="badge badge-rir">2 RIR</span></td>
+                <td><span class="badge badge-rest">2.5 Min</span></td>
+                <td>Incline Barbell Press</td>
+            </tr>
+            <tr>
+                <td><strong>2. Chest-Supported DB Row</strong></td>
+                <td>Rhomboids / Mid-Back</td>
+                <td>Free Weight</td>
+                <td>3</td>
+                <td>8-10</td>
+                <td><span class="badge badge-tempo">3-0-1-1</span></td>
+                <td><span class="badge badge-rir">2 RIR</span></td>
+                <td><span class="badge badge-rest">2 Min</span></td>
+                <td>Barbell Row</td>
+            </tr>
+            <tr>
+                <td><strong>3. Low-to-High Cable Flye</strong></td>
+                <td>Upper Chest (Shortened)</td>
+                <td>Machine</td>
+                <td>3</td>
+                <td>12-15</td>
+                <td><span class="badge badge-tempo">3-0-1-1</span></td>
+                <td><span class="badge badge-rir">1 RIR</span></td>
+                <td><span class="badge badge-rest">90 Sec</span></td>
+                <td>Incline DB Flye</td>
+            </tr>
+            <tr>
+                <td><strong>4. Single-Arm Lat Pulldown</strong></td>
+                <td>Lower Latissimus Dorsi</td>
+                <td>Machine</td>
+                <td>3</td>
+                <td>10-12</td>
+                <td><span class="badge badge-tempo">3-0-1-1</span></td>
+                <td><span class="badge badge-rir">1-2 RIR</span></td>
+                <td><span class="badge badge-rest">90 Sec</span></td>
+                <td>Dumbbell Lat Pull-around</td>
+            </tr>
+            <tr>
+                <td><strong>5. Barbell Pullover</strong></td>
+                <td>Lats / Serratus Anterior</td>
+                <td>Free Weight</td>
+                <td>3</td>
+                <td>12-15</td>
+                <td><span class="badge badge-tempo">3-1-1-0</span></td>
+                <td><span class="badge badge-rir">2 RIR</span></td>
+                <td><span class="badge badge-rest">2 Min</span></td>
+                <td>Cable Pullover</td>
+            </tr>
+            <tr>
+                <td><strong>6. Reverse Grip Barbell Row</strong></td>
+                <td>Lower Lats / Mid-Back</td>
+                <td>Free Weight</td>
+                <td>3</td>
+                <td>8-10</td>
+                <td><span class="badge badge-tempo">3-0-1-0</span></td>
+                <td><span class="badge badge-rir">2 RIR</span></td>
+                <td><span class="badge badge-rest">2 Min</span></td>
+                <td>Underhand Cable Row</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="callout">
+        <div class="callout-title">Friday Coaching Cues</div>
+        <div class="callout-content">
+            <strong>30&deg; Incline DB Press:</strong> Press the dumbbells in a slight arch, bringing them together over your upper chest. Do not let them touch or clang at the top to maintain continuous mechanical tension.
+            <br><strong>Chest-Supported DB Row:</strong> Set the bench to a 30-45 degree incline. Lie face down. Pull your elbows up towards the ceiling, squeezing your shoulder blades together. Let your arms hang straight down to stretch the back between reps.
+        </div>
+    </div>
+    
+
+    <div class="page-break"></div>
+    <h2>SATURDAY: ARMS + SIDE DELTS + FOREARMS</h2>
+    <p><strong>Total Duration:</strong> 65 Minutes &nbsp;|&nbsp; <strong>CNS Intensity:</strong> Medium-High &nbsp;|&nbsp; <strong>Target:</strong> Upper Arm Width &amp; Side Delts</p>
+    
+    <h3>1. Warm-Up &amp; Mobility (10 Minutes)</h3>
+    <ul>
+        <li><strong>Wrist Circles:</strong> 20 reps in each direction (lubricates wrist joint).</li>
+        <li><strong>Band Bicep Curls:</strong> 2 sets of 20 reps (warm up elbow joints).</li>
+        <li><strong>Band Tricep Pushdowns:</strong> 2 sets of 20 reps (lubricates elbows).</li>
+        <li><strong>Dumbbell Lateral Raise (Very Light):</strong> 2 sets of 15 reps (shoulder preparation).</li>
+    </ul>
+
+    <h3>Saturday Workout Table</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Exercise</th>
+                <th>Target Muscle</th>
+                <th>Type</th>
+                <th>Sets</th>
+                <th>Reps</th>
+                <th>Tempo</th>
+                <th>RIR</th>
+                <th>Rest</th>
+                <th>Alternative</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>1. Close-Grip Bench Press</strong></td>
+                <td>Triceps (Lateral Head Focus)</td>
+                <td>Free Weight</td>
+                <td>3</td>
+                <td>6-8</td>
+                <td><span class="badge badge-tempo">3-1-1-0</span></td>
+                <td><span class="badge badge-rir">2 RIR</span></td>
+                <td><span class="badge badge-rest">3 Min</span></td>
+                <td>Weighted Dips (C-G)</td>
+            </tr>
+            <tr>
+                <td><strong>2. EZ-Bar Preacher Curl</strong></td>
+                <td>Biceps Short Head (Inner)</td>
+                <td>Free Weight</td>
+                <td>3</td>
+                <td>8-10</td>
+                <td><span class="badge badge-tempo">3-0-1-1</span></td>
+                <td><span class="badge badge-rir">2 RIR</span></td>
+                <td><span class="badge badge-rest">2 Min</span></td>
+                <td>Dumbbell Spider Curl</td>
+            </tr>
+            <tr>
+                <td><strong>3. Lying EZ-Bar Skull Crusher</strong></td>
+                <td>Triceps Long Head (Stretch)</td>
+                <td>Free Weight</td>
+                <td>3</td>
+                <td>10-12</td>
+                <td><span class="badge badge-tempo">3-1-1-0</span></td>
+                <td><span class="badge badge-rir">1-2 RIR</span></td>
+                <td><span class="badge badge-rest">90 Sec</span></td>
+                <td>Seated Overhead DB Extension</td>
+            </tr>
+            <tr>
+                <td><strong>4. Incline DB Hammer Curl</strong></td>
+                <td>Brachialis / Biceps Long</td>
+                <td>Free Weight</td>
+                <td>3</td>
+                <td>10-12</td>
+                <td><span class="badge badge-tempo">3-0-1-0</span></td>
+                <td><span class="badge badge-rir">1 RIR</span></td>
+                <td><span class="badge badge-rest">90 Sec</span></td>
+                <td>Rope Hammer Curl</td>
+            </tr>
+            <tr>
+                <td><strong>5. Standing Cable Lateral Raise</strong></td>
+                <td>Side Delts (Stretch)</td>
+                <td>Machine</td>
+                <td>4</td>
+                <td>12-15</td>
+                <td><span class="badge badge-tempo">3-0-1-1</span></td>
+                <td><span class="badge badge-rir">1 RIR</span></td>
+                <td><span class="badge badge-rest">90 Sec</span></td>
+                <td>Dumbbell Lateral Raise</td>
+            </tr>
+            <tr>
+                <td><strong>6. Reverse Barbell Wrist Curl</strong></td>
+                <td>Forearm Extensors</td>
+                <td>Free Weight</td>
+                <td>3</td>
+                <td>15-20</td>
+                <td><span class="badge badge-tempo">2-0-1-1</span></td>
+                <td><span class="badge badge-rir">0-1 RIR</span></td>
+                <td><span class="badge badge-rest">60 Sec</span></td>
+                <td>Reverse DB Wrist Curl</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="callout">
+        <div class="callout-title">Saturday Coaching Cues</div>
+        <div class="callout-content">
+            <strong>Close-Grip Bench:</strong> Position your hands shoulder-width apart. Lower the bar slowly, keeping your elbows tucked close to your ribs. Press up, locking out your triceps at the top.
+            <br><strong>EZ-Bar Preacher Curl:</strong> Pin your armpits to the preacher pad. Lower the bar completely until your arms are fully extended (eccentric stretch). Curl the bar up, stopping slightly before it becomes vertical to maintain tension.
+        </div>
+    </div>
+    
+
+    <div class="page-break"></div>
+    <h2>SUNDAY: ACTIVE RECOVERY AT HOME</h2>
+    <p><strong>Total Duration:</strong> 30 - 45 Minutes &nbsp;|&nbsp; <strong>CNS Intensity:</strong> Extremely Low &nbsp;|&nbsp; <strong>Target:</strong> Active Blood Flow &amp; Joint Health</p>
+    
+    <p>Sunday is a non-negotiable recovery day. There is no resistance training. Do not touch a weight. Your goals today are simple: increase blood flow to deliver nutrients to damaged muscle tissues, decompress your spine, and restore optimal joint range of motion.</p>
+
+    <h3>Active Recovery Protocol</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Protocol Component</th>
+                <th>Activity Details</th>
+                <th>Target Goals</th>
+                <th>Time / Duration</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>1. Low-Intensity Steady State (LISS)</strong></td>
+                <td>Outdoor walk or very light stationary cycling in Zone 2 heart rate (110-120 bpm). Keep it light.</td>
+                <td>Flushes lactic acid, delivers oxygenated blood to recovering muscles.</td>
+                <td>30 Mins</td>
+            </tr>
+            <tr>
+                <td><strong>2. Spine Decompression</strong></td>
+                <td>Hang from a pull-up bar with relaxed shoulders. Feel your vertebrae separate.</td>
+                <td>Relieves compressed spinal discs from heavy weekly squats and presses.</td>
+                <td>3 sets of 30-45 Secs</td>
+            </tr>
+            <tr>
+                <td><strong>3. Hip Openers</strong></td>
+                <td>Deep bodyweight squat hold (using a pole or rack for support if needed) and Couch Stretch.</td>
+                <td>Releases tight hip flexors (psoas) from prolonged sitting or heavy training.</td>
+                <td>2 sets of 60 Secs/leg</td>
+            </tr>
+            <tr>
+                <td><strong>4. Diaphragmatic Breathing</strong></td>
+                <td>Lie on your back, legs bent. Inhale deep into your belly for 4s, hold 4s, exhale 4s, hold 4s.</td>
+                <td>Activates parasympathetic nervous system (rest-and-digest mode), reducing cortisol.</td>
+                <td>5 Mins (Post-stretching)</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="science-box">
+        <div class="science-title">The Scientific Rationale for Active Recovery</div>
+        <div class="science-content">
+            Lying on the couch all day (passive recovery) actually slows down muscle recovery. Light, low-impact activity increases blood circulation without causing micro-tears in the muscle fibers. The increased flow of oxygen and nutrients speeds up the clearance of metabolic waste, accelerating the repair of skeletal muscle tissue so you can start Monday's session fully restored.
+        </div>
+    </div>
+    
+
+    <div class="page-break"></div>
+    <h1>CHAPTER 5: EXERCISE MASTERCLASS &amp; BIOMECHANICS</h1>
+    <p>To train like an elite athlete, you must understand the mechanics of each lift. This chapter covers the details for the main compound lifts and aesthetic isolation movements in the program. Read these guidelines before your workouts to ensure perfect execution.</p>
+
+    <div class="ex-card">
+        <div class="ex-header">
+            <span class="ex-name">1. Incline Barbell Bench Press</span>
+            <span class="ex-target">Upper Chest (Clavicular Pectoralis)</span>
+        </div>
+        <div class="ex-body">
+            <div class="ex-meta-grid">
+                <div class="ex-meta-item">
+                    <span class="ex-meta-label">Primary Target</span>
+                    <span>Clavicular Pec Head</span>
+                </div>
+                <div class="ex-meta-item">
+                    <span class="ex-meta-label">Equipment</span>
+                    <span>Barbell & Incline Bench</span>
+                </div>
+                <div class="ex-meta-item">
+                    <span class="ex-meta-label">Bench Angle</span>
+                    <span>30 Degrees</span>
+                </div>
+                <div class="ex-meta-item">
+                    <span class="ex-meta-label">Safety Status</span>
+                    <span>Highly Stable</span>
+                </div>
+            </div>
+            <div class="ex-detail-grid">
+                <div class="ex-detail-section">
+                    <h4>Why Included</h4>
+                    <p>It is the absolute best compound movement for upper chest mass. Natural lifters often struggle with upper chest volume. The incline barbell bench allows you to handle maximum mechanical load, forcing growth in the upper fibers of the pectorals.</p>
+                </div>
+                <div class="ex-detail-section">
+                    <h4>Correct Form</h4>
+                    <p>Set the bench to 30 degrees. Retract and depress your scapula. Keep your feet flat on the floor. Grip the bar slightly wider than shoulder width. Lower the bar under control (3s) to your upper collarbone. Pause for 1 second, then drive the bar back up to extension.</p>
+                </div>
+            </div>
+            <div class="ex-detail-grid" style="margin-top: 10px; border-top: 1px solid #f1f5f9; padding-top: 10px;">
+                <div class="ex-detail-section">
+                    <h4>Breathing &amp; ROM</h4>
+                    <p>Inhale on the way down, expanding your ribcage. Hold your breath at the bottom to maintain core stability. Exhale forcefully once you pass the sticking point. Maintain a full range of motion, touching your collarbone on every repetition.</p>
+                </div>
+                <div class="ex-detail-section">
+                    <h4>Common Mistakes to Avoid</h4>
+                    <p>Setting the bench angle too high (e.g., 45 degrees or more), which shifts the load onto the front deltoids. Bouncing the bar off your chest. Flaring your elbows out to 90 degrees, which places extreme stress on the rotator cuffs.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ex-card">
+        <div class="ex-header">
+            <span class="ex-name">2. Standing Cable Lateral Raise</span>
+            <span class="ex-target">Side Deltoids (Lateral Head)</span>
+        </div>
+        <div class="ex-body">
+            <div class="ex-meta-grid">
+                <div class="ex-meta-item">
+                    <span class="ex-meta-label">Primary Target</span>
+                    <span>Lateral Deltoid</span>
+                </div>
+                <div class="ex-meta-item">
+                    <span class="ex-meta-label">Equipment</span>
+                    <span>Cable & Single Handle</span>
+                </div>
+                <div class="ex-meta-item">
+                    <span class="ex-meta-label">Cable Height</span>
+                    <span>Ankle Level</span>
+                </div>
+                <div class="ex-meta-item">
+                    <span class="ex-meta-label">Tension State</span>
+                    <span>Continuous Stretch</span>
+                </div>
+            </div>
+            <div class="ex-detail-grid">
+                <div class="ex-detail-section">
+                    <h4>Why Included</h4>
+                    <p>Unlike dumbbells, which provide zero tension at the bottom of the movement, cables provide continuous tension across the entire range of motion. Standing in front of the cable column places the lateral deltoid under intense stretch, maximizing growth.</p>
+                </div>
+                <div class="ex-detail-section">
+                    <h4>Correct Form</h4>
+                    <p>Set the cable to the bottom setting. Stand slightly in front of the machine, holding the handle in the opposite hand. Keep your torso straight and chest up. Pull the cable out and up in a wide arc. Keep a very slight bend in your elbow. Lower the weight slowly (3s).</p>
+                </div>
+            </div>
+            <div class="ex-detail-grid" style="margin-top: 10px; border-top: 1px solid #f1f5f9; padding-top: 10px;">
+                <div class="ex-detail-section">
+                    <h4>Breathing &amp; ROM</h4>
+                    <p>Exhale on the concentric (upward) phase. Inhale as you lower the cable under control. Raise your hand to shoulder height. Do not go higher than your shoulder, as this recruits the traps.</p>
+                </div>
+                <div class="ex-detail-section">
+                    <h4>Common Mistakes to Avoid</h4>
+                    <p>Using momentum by rocking your torso back and forth. Shrugging the weight up using your upper traps. Bending your elbow too much, which shortens the lever arm and reduces tension on the side delt.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-break"></div>
+    <div class="ex-card">
+        <div class="ex-header">
+            <span class="ex-name">3. Weighted Pull-Up</span>
+            <span class="ex-target">Latissimus Dorsi &amp; Teres Major</span>
+        </div>
+        <div class="ex-body">
+            <div class="ex-meta-grid">
+                <div class="ex-meta-item">
+                    <span class="ex-meta-label">Primary Target</span>
+                    <span>Latissimus Dorsi</span>
+                </div>
+                <div class="ex-meta-item">
+                    <span class="ex-meta-label">Equipment</span>
+                    <span>Pull-up Bar & Dip Belt</span>
+                </div>
+                <div class="ex-meta-item">
+                    <span class="ex-meta-label">Grip Width</span>
+                    <span>Slightly Wide</span>
+                </div>
+                <div class="ex-meta-item">
+                    <span class="ex-meta-label">Movement Type</span>
+                    <span>Vertical Pull</span>
+                </div>
+            </div>
+            <div class="ex-detail-grid">
+                <div class="ex-detail-section">
+                    <h4>Why Included</h4>
+                    <p>The pull-up is the ultimate V-taper builder. Adding weight increases the mechanical tension, forcing the latissimus dorsi to widen. The vertical pulling motion targets the outer lat fibers, widening your upper body silhouette.</p>
+                </div>
+                <div class="ex-detail-section">
+                    <h4>Correct Form</h4>
+                    <p>Hang from a bar with a slightly wider than shoulder-width overhand grip. Depress your shoulder blades first. Pull your chest to the bar by driving your elbows down. Keep your core tight to prevent swinging. Lower yourself slowly (3s) to a dead hang.</p>
+                </div>
+            </div>
+            <div class="ex-detail-grid" style="margin-top: 10px; border-top: 1px solid #f1f5f9; padding-top: 10px;">
+                <div class="ex-detail-section">
+                    <h4>Breathing &amp; ROM</h4>
+                    <p>Inhale deeply as you lower yourself to the bottom dead hang. Exhale as you pull your chest up. Pull until your chin clear the bar. Lower yourself fully until your arms are straight to stretch the lats.</p>
+                </div>
+                <div class="ex-detail-section">
+                    <h4>Common Mistakes to Avoid</h4>
+                    <p>Kicking your legs or using momentum (kipping). Not lowering yourself all the way, missing out on the eccentric stretch. Pulling with your biceps instead of driving with your elbows.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ex-card">
+        <div class="ex-header">
+            <span class="ex-name">4. Barbell Back Squat</span>
+            <span class="ex-target">Quadriceps, Gluteus Maximus, Erector Spinae</span>
+        </div>
+        <div class="ex-body">
+            <div class="ex-meta-grid">
+                <div class="ex-meta-item">
+                    <span class="ex-meta-label">Primary Target</span>
+                    <span>Quadriceps (All Heads)</span>
+                </div>
+                <div class="ex-meta-item">
+                    <span class="ex-meta-label">Equipment</span>
+                    <span>Barbell & Power Rack</span>
+                </div>
+                <div class="ex-meta-item">
+                    <span class="ex-meta-label">Bar Position</span>
+                    <span>High Bar / Mid Bar</span>
+                </div>
+                <div class="ex-meta-item">
+                    <span class="ex-meta-label">Movement Type</span>
+                    <span>Anterior Chain Compound</span>
+                </div>
+            </div>
+            <div class="ex-detail-grid">
+                <div class="ex-detail-section">
+                    <h4>Why Included</h4>
+                    <p>The barbell squat is the foundation of lower body strength and muscular development. It loads the entire leg system under significant mechanical tension, promoting system-wide hypertrophy and building thick, functional, athletic quadriceps.</p>
+                </div>
+                <div class="ex-detail-section">
+                    <h4>Correct Form</h4>
+                    <p>Place the bar across your traps. Stand with feet slightly wider than hip-width, toes angled slightly out. Keep your chest up and core braced. Push your hips back and bend your knees. Lower yourself until your thighs are parallel to the floor or lower. Drive up through your mid-foot.</p>
+                </div>
+            </div>
+            <div class="ex-detail-grid" style="margin-top: 10px; border-top: 1px solid #f1f5f9; padding-top: 10px;">
+                <div class="ex-detail-section">
+                    <h4>Breathing &amp; ROM</h4>
+                    <p>Take a deep belly breath and brace your core at the top. Hold your breath through the descent. Exhale as you drive back up. Squat below parallel to activate the full quadriceps and glutes.</p>
+                </div>
+                <div class="ex-detail-section">
+                    <h4>Common Mistakes to Avoid</h4>
+                    <p>Letting your knees cave inward (valgus collapse). Elevating your heels or shifting your weight onto your toes. Curving your lower back (butt wink) at the bottom of the squat, placing stress on your lumbar spine.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="page-break"></div>
+    <h1>CHAPTER 6: CARDIO &amp; CONDITIONING FOR AESTHETICS</h1>
+    <p>A classic aesthetic physique requires more than just muscle size; it requires a low body fat percentage and a healthy cardiovascular system. However, doing the wrong type of cardio can interfere with muscle hypertrophy. This program uses a science-based cardiovascular plan designed to support fat loss and health without sacrificing muscle mass.</p>
+
+    <h2>The Interference Effect: How to Avoid Muscle Loss</h2>
+    <p>When you perform long, high-intensity cardio sessions, your body produces AMPK, an enzyme associated with aerobic adaptation that can suppress mTOR (the pathway responsible for muscle protein synthesis). To prevent this "interference effect," we follow two rules:
+    <ol>
+        <li>Keep cardiovascular training separate from your weightlifting sessions (either separate days or separated by at least 6 hours).</li>
+        <li>Focus on **Low-Intensity Steady State (LISS)** cardio, which burns fat and increases capillary density without triggering excessive muscle breakdown.</li>
+    </ol>
+    </p>
+
+    <h2>The Weekly Cardio Prescription</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Type of Cardio</th>
+                <th>Frequency</th>
+                <th>Target Heart Rate</th>
+                <th>Duration</th>
+                <th>Suggested Modalities</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>LISS (Zone 2)</strong></td>
+                <td>3x per week (Wed / Sat / Sun)</td>
+                <td>60% - 70% of Max HR (115-130 bpm)</td>
+                <td>30 - 45 Mins</td>
+                <td>Incline Treadmill Walk, Outdoor Walk, Stationary Bike</td>
+            </tr>
+            <tr>
+                <td><strong>Aesthetic HIIT (HIIT)</strong></td>
+                <td>1x per week (Thursday or Sat PM)</td>
+                <td>85% - 95% of Max HR</td>
+                <td>15 Mins</td>
+                <td>Rowing Machine, Battle Ropes, Hill Sprints (Low Impact)</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="science-box">
+        <div class="science-title">The Benefits of Zone 2 LISS Cardio</div>
+        <div class="science-content">
+            Zone 2 cardio increases mitochondrial density and capillary networks within skeletal muscle. This improved blood supply delivers nutrients to recovering muscle tissues, clearing metabolic waste more quickly. In addition, it improves your work capacity in the gym, allowing you to perform more reps with heavy weights before fatiguing.
+        </div>
+    </div>
+    
+
+    <div class="page-break"></div>
+    <h1>CHAPTER 7: COMPLETE WEEKLY CORE ROUTINE</h1>
+    <p>An aesthetic physique is defined by a tight, waist-minimizing core. We do not want thick, bulky obliques that widen our midsection. Instead, we target the **rectus abdominis** (six-pack) and the **transversus abdominis** (inner corset), creating a flat, tightly pulled-in waist.</p>
+
+    <h2>Core Workout Anatomy</h2>
+    <p>We train the core twice per week using movements that target both spinal flexion (abdominal recruitment) and isometric stabilization (corset tightening):
+    <ul>
+        <li><strong>Upper Abs:</strong> Targeted via top-down spinal flexion (e.g., Cable Crunches).</li>
+        <li><strong>Lower Abs:</strong> Targeted via bottom-up pelvic rotation (e.g., Hanging Leg Raises).</li>
+        <li><strong>Transversus Abdominis (TVA):</strong> Targeted via vacuum work and planks, pulling the belly button in towards the spine.</li>
+    </ul>
+    </p>
+
+    <h2>The Weekly Core Schedule</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Day</th>
+                <th>Exercise</th>
+                <th>Target Area</th>
+                <th>Sets</th>
+                <th>Reps / Time</th>
+                <th>Tempo</th>
+                <th>Rest</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Wednesday</strong></td>
+                <td>Hanging Knee Raises</td>
+                <td>Lower Abs</td>
+                <td>3</td>
+                <td>12-15 reps</td>
+                <td>3-0-1-1</td>
+                <td>60 Sec</td>
+            </tr>
+            <tr>
+                <td><strong>Wednesday</strong></td>
+                <td>Stomach Vacuums</td>
+                <td>Transversus Abdominis</td>
+                <td>4</td>
+                <td>Hold 20-30 Secs</td>
+                <td>Static Hold</td>
+                <td>45 Sec</td>
+            </tr>
+            <tr>
+                <td><strong>Saturday</strong></td>
+                <td>Kneeling Cable Crunches</td>
+                <td>Upper Abs</td>
+                <td>3</td>
+                <td>12-15 reps</td>
+                <td>3-0-1-1</td>
+                <td>60 Sec</td>
+            </tr>
+            <tr>
+                <td><strong>Saturday</strong></td>
+                <td>RKC Plank</td>
+                <td>Inner Core &amp; Glutes</td>
+                <td>3</td>
+                <td>Max Tension 30s</td>
+                <td>Max contraction</td>
+                <td>60 Sec</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="callout">
+        <div class="callout-title">The Stomach Vacuum Execution</div>
+        <div class="callout-content">
+            Stomach vacuums are essential for a tight, flat midsection. Perform them first thing in the morning on an empty stomach. Exhale all air from your lungs. Pull your belly button in as far as possible, imagining it touching your spine. Hold this contraction for 20-30 seconds while taking shallow breaths. Release and repeat.
+        </div>
+    </div>
+    
+
+    <div class="page-break"></div>
+    <h1>CHAPTER 8: MOBILITY &amp; FLEXIBILITY BLUEPRINT</h1>
+    <p>To train pain-free and build symmetrical muscle, your joints must move through a full range of motion. Poor mobility leads to biomechanical compensation, where surrounding joints take the load, increasing injury risk and reducing muscle recruitment.</p>
+
+    <h2>The Daily 8-Minute Mobility Flow</h2>
+    <p>Perform this routine before every workout session. Focus on breathing and relaxed movement, avoiding bouncing or forcing a range of motion.</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Target Joint</th>
+                <th>Mobility Drill</th>
+                <th>Reps / Time</th>
+                <th>Coaching Focus</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Shoulder Girdle</strong></td>
+                <td>Band Shoulder Dislocates</td>
+                <td>10 Reps</td>
+                <td>Keep arms straight; widen grip on the band if shoulders feel tight.</td>
+            </tr>
+            <tr>
+                <td><strong>Thoracic Spine</strong></td>
+                <td>T-Spine Extension on Foam Roller</td>
+                <td>10 Reps</td>
+                <td>Support head, keep hips on the ground, arch upper back over roller.</td>
+            </tr>
+            <tr>
+                <td><strong>Hip Joint</strong></td>
+                <td>90/90 Hip Switches</td>
+                <td>8 reps per side</td>
+                <td>Keep torso upright; rotate hips to touch knees to floor on both sides.</td>
+            </tr>
+            <tr>
+                <td><strong>Ankle Mobility</strong></td>
+                <td>Weight-bearing Calf Stretch</td>
+                <td>45 Secs per leg</td>
+                <td>Keep heel down; drive knee forward over pinky toe to open ankle joint.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Post-Workout Stretching</h2>
+    <p>Following your workouts, target the muscles you just trained with static stretches. Hold each stretch for 30-45 seconds. This relaxes the nervous system, transitions your body into a recovery state, and helps maintain muscle length.</p>
+    <ul>
+        <li><strong>Chest Stretch:</strong> Place forearm on doorway, turn torso away.</li>
+        <li><strong>Lat Stretch:</strong> Hold a vertical bar, sit hips back, stretching outer back.</li>
+        <li><strong>Quad/Hip Flexor Stretch:</strong> Couch stretch (knee against wall, foot upright, torso tall).</li>
+        <li><strong>Hamstring Stretch:</strong> Seated single-leg reach.</li>
+    </ul>
+
+    <div class="science-box">
+        <div class="science-title">Biomechanical Impact of Ankle Dorsiflexion</div>
+        <div class="science-content">
+            Poor ankle mobility is a major cause of lower back pain during squats. When your ankles cannot bend sufficiently (dorsiflexion), your heels lift, forcing you to lean forward at the hips to maintain balance. This shifts the load from your quads to your lower back. Elevating your heels slightly on small plates or wearing olympic lifting shoes can bypass this restriction while you work on your ankle mobility.
+        </div>
+    </div>
+    
+
+    <div class="page-break"></div>
+    <h1>CHAPTER 9: ELITE MUSCLE-BUILDING NUTRITION</h1>
+    <p>Training only provides the stimulus for muscle growth; nutrition provides the actual building blocks. Without an optimized nutrition plan, your efforts in the gym are wasted. This guide explains how to calculate your calories and macros to build muscle while maintaining low body fat.</p>
+
+    <h2>Step 1: Calculate Your Caloric Target</h2>
+    <p>To build muscle without adding excess body fat, we aim for a clean bulk or body recomposition:
+    <ul>
+        <li><strong>Basal Metabolic Rate (BMR):</strong> The energy your body needs to function at rest.
+            <br><em>BMR (Men) = (10 x weight in kg) + (6.25 x height in cm) - (5 x age in years) + 5</em>
+        </li>
+        <li><strong>Total Daily Energy Expenditure (TDEE):</strong> BMR multiplied by an activity factor (typically 1.55 for training 6 days/week).
+            <br><em>TDEE = BMR x 1.55</em>
+        </li>
+        <li><strong>The Muscle-Building Surplus:</strong> Add 200 - 300 calories to your TDEE. This provides enough energy for muscle growth while minimizing fat storage.
+        </li>
+    </ul>
+    </p>
+
+    <h2>Step 2: Define Your Macronutrient Split</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Macronutrient</th>
+                <th>Target Per Pound of Bodyweight</th>
+                <th>Target Per KG of Bodyweight</th>
+                <th>Energy Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Protein</strong></td>
+                <td>1.0g - 1.2g</td>
+                <td>2.2g - 2.6g</td>
+                <td>4 Calories per gram</td>
+            </tr>
+            <tr>
+                <td><strong>Fat</strong></td>
+                <td>0.3g - 0.4g</td>
+                <td>0.7g - 0.9g</td>
+                <td>9 Calories per gram</td>
+            </tr>
+            <tr>
+                <td><strong>Carbohydrates</strong></td>
+                <td>Fill remaining calories</td>
+                <td>Remaining balance</td>
+                <td>4 Calories per gram</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Pre- and Post-Workout Nutrition</h2>
+    <div class="grid-2">
+        <div class="callout">
+            <div class="callout-title">The Pre-Workout Fuel (90 Mins Prior)</div>
+            <div class="callout-content">
+                Aim for 30-40g of slow-digesting carbohydrates and 25-35g of lean protein. Keep fats low, as they slow down digestion.
+                <br><em>Example: 80g cream of rice, 30g whey isolate, 1 banana.</em>
+            </div>
+        </div>
+        <div class="callout" style="border-left-color: #0d9488;">
+            <div class="callout-title">The Post-Workout Recovery (Within 60 Mins)</div>
+            <div class="callout-content">
+                Aim for 40-50g of fast-digesting carbohydrates and 30-40g of rapid-acting protein to jumpstart muscle repair.
+                <br><em>Example: 35g Whey Protein, 100g white rice, 100g cooked chicken breast.</em>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="page-break"></div>
+    <h1>CHAPTER 10: EVIDENCE-BASED SUPPLEMENT GUIDE</h1>
+    <p>Supplements are not a replacement for proper training and nutrition; they are the final 5% optimization. This guide covers only evidence-based supplements that are scientifically proven to improve athletic performance, muscle growth, and recovery.</p>
+
+    <h2>Evidence-Based Supplement Stack</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Supplement</th>
+                <th>Daily Dosage</th>
+                <th>Optimal Timing</th>
+                <th>Scientific Benefits</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Creatine Monohydrate</strong></td>
+                <td>5 grams daily</td>
+                <td>Post-workout or morning</td>
+                <td>Increases muscle phosphocreatine stores, raising ATP production for greater strength, power output, and intracellular hydration.</td>
+            </tr>
+            <tr>
+                <td><strong>Whey Protein Isolate</strong></td>
+                <td>25 - 50 grams as needed</td>
+                <td>Post-workout or meal gap</td>
+                <td>High bioavailability protein rich in leucine. Triggers Muscle Protein Synthesis (MPS) and supports daily protein targets.</td>
+            </tr>
+            <tr>
+                <td><strong>Omega 3 (Fish Oil)</strong></td>
+                <td>2000 - 3000mg (EPA/DHA)</td>
+                <td>With morning meal</td>
+                <td>Reduces systemic inflammation, supports joint health, and improves insulin sensitivity in muscle tissue.</td>
+            </tr>
+            <tr>
+                <td><strong>Vitamin D3</strong></td>
+                <td>2000 - 5000 IU</td>
+                <td>With breakfast fat source</td>
+                <td>Crucial for testosterone synthesis, immune function, and bone mineral density. Most indoor athletes are deficient.</td>
+            </tr>
+            <tr>
+                <td><strong>Electrolytes (Na, K, Mg)</strong></td>
+                <td>1 serving (500mg Sodium)</td>
+                <td>Intra-workout in water</td>
+                <td>Prevents muscle cramping, maintains cellular hydration, and optimizes muscular contraction and pumps during workouts.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="science-box">
+        <div class="science-title">The Science of Creatine Loading</div>
+        <div class="science-content">
+            You do not need to do a high-dose creatine "loading phase" (20g/day) which can cause stomach distress. Research shows that taking a steady 5g per day will fully saturate your muscle cells within 21-28 days. Once saturated, continue taking 5g daily (even on rest days) to maintain saturation.
+        </div>
+    </div>
+    
+
+    <div class="page-break"></div>
+    <h1>CHAPTER 11: RECOVERY OPTIMIZATION &amp; JOINT HEALTH</h1>
+    <p>Muscle growth does not happen while you are lifting; it happens while you are resting. When you lift weights, you create micro-tears in your muscle fibers. Your body repairs these fibers, making them larger and stronger, only when you recover. If your recovery is poor, you will remain sore, lose strength, and risk injury.</p>
+
+    <h2>1. Sleep: The Ultimate Anabolic Window</h2>
+    <p>Sleep is when your body releases the majority of its natural growth hormone (GH) and testosterone. Aim for <strong>7.5 to 9 hours of quality sleep</strong> per night. To improve sleep quality:
+    <ul>
+        <li>Keep your room cool (65-68°F / 18-20°C).</li>
+        <li>Avoid screens and blue light for 60 minutes before bed.</li>
+        <li>Keep your sleeping environment completely dark.</li>
+    </ul>
+    </p>
+
+    <h2>2. Stress &amp; Cortisol Management</h2>
+    <p>High mental stress increases cortisol, a catabolic hormone that breaks down muscle tissue and slows recovery. If you are chronically stressed, your body's ability to repair muscle is reduced by up to 50%. Practice stress-reduction techniques such as diaphragmatic breathing, meditation, or spending time outdoors.</p>
+
+    <h2>3. Active Recovery &amp; Soft Tissue Care</h2>
+    <div class="grid-2">
+        <div class="callout">
+            <div class="callout-title">Foam Rolling (SMR)</div>
+            <div class="callout-content">
+                Use a foam roller for 5-10 minutes on tight muscle groups. Focus on your lats, quadriceps, and thoracic spine to increase blood flow and relax tight fascia.
+            </div>
+        </div>
+        <div class="callout" style="border-left-color: #0d9488;">
+            <div class="callout-title">Massage Gun Therapy</div>
+            <div class="callout-content">
+                Apply a percussion massage gun to sore muscles for 1-2 minutes per area. Avoid bony areas. This stimulates local blood flow and reduces post-workout muscle soreness.
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="page-break"></div>
+    <h1>CHAPTER 12: PROGRESS TRACKING SHEETS</h1>
+    <p>What is not measured cannot be managed. To ensure you are progressing, you must track your body weight, measurements, strength levels, and take regular progress photos. Use the tables below to document your journey.</p>
+
+    <h2>Weekly Body Weight &amp; Measurement Log</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Week</th>
+                <th>Weight (Avg)</th>
+                <th>Chest (cm)</th>
+                <th>Waist (cm)</th>
+                <th>Shoulders (cm)</th>
+                <th>Arms (cm)</th>
+                <th>Thighs (cm)</th>
+                <th>Progress Photo (Y/N)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Week 1</strong></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><strong>Week 2</strong></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><strong>Week 3</strong></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><strong>Week 4</strong></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><strong>Week 5</strong></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><strong>Week 6</strong></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><strong>Week 7</strong></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><strong>Week 8</strong></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><strong>Week 9</strong></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><strong>Week 10</strong></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><strong>Week 11</strong></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><strong>Week 12 (Deload)</strong></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Strength Personal Records (PR) Log</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Core Lift</th>
+                <th>Baseline Weight</th>
+                <th>Baseline Reps</th>
+                <th>Week 4 PR</th>
+                <th>Week 8 PR</th>
+                <th>Week 12 PR</th>
+                <th>Total Increase</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Incline Barbell Press</strong></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><strong>Weighted Pull-Ups</strong></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><strong>Barbell Back Squat</strong></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><strong>Close-Grip Bench Press</strong></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    
+
+    <div class="page-break"></div>
+    <h1>CHAPTER 13: ETIQUETTE, FAQ, &amp; TRANSFORMATION TIMELINE</h1>
+    <p>Building an outstanding physique requires discipline, consistency, and a professional mindset both inside and outside the gym. This final chapter covers essential gym etiquette, frequently asked questions, and what to expect on your transformation timeline.</p>
+
+    <h2>Elite Gym Etiquette</h2>
+    <ul>
+        <li><strong>Rerack Your Weights:</strong> Always return dumbbells, plates, and attachments to their correct racks when you are finished. Leaving weights around is unprofessional and disrespectful.</li>
+        <li><strong>Wipe Down Equipment:</strong> Bring a towel and wipe down benches, machines, and grips when you are finished to maintain hygiene.</li>
+        <li><strong>Do Not Block Mirrors:</strong> Many lifters use mirrors to monitor their form. Avoid standing directly in front of someone who is mid-set.</li>
+        <li><strong>Be Mindful of Space:</strong> When performing dumbbell raises or extensions, ensure you have enough clearance from other lifters.</li>
+    </ul>
+
+    <h2>Expected Transformation Timeline</h2>
+    <div class="callout">
+        <div class="callout-title">Weeks 1 - 4: Neurological Adaptation</div>
+        <div class="callout-content">
+            Your body learns the motor patterns of the exercises. You will experience rapid strength gains and initial muscle pumps due to increased glycogen storage.
+        </div>
+    </div>
+    <div class="callout" style="border-left-color: #0d9488;">
+        <div class="callout-title">Weeks 5 - 12: Visual Reconstruction</div>
+        <div class="callout-content">
+            Actual muscle tissue hypertrophy begins to show. Your upper chest will appear fuller, your shoulders wider, and your waist will look tighter due to lat development.
+        </div>
+    </div>
+    <div class="callout" style="border-left-color: #1e40af;">
+        <div class="callout-title">6 Months to 1 Year: Symmetrical Mastery</div>
+        <div class="callout-content">
+            Your physique will show complete classic lines. Your V-taper will be highly defined, and your proportions will resemble classic men's physique competitors.
+        </div>
+    </div>
+
+    <h2>Frequently Asked Questions (FAQ)</h2>
+    <p><strong>Q: What should I do if I miss a workout day?</strong>
+    <br>A: Do not skip the day entirely. Simply shift the schedule by one day, continuing in the correct order. Keep your rest days in place to ensure proper recovery.
+    </p>
+    <p><strong>Q: Can I train my abs every day?</strong>
+    <br>A: No. Abdominal muscles are skeletal muscle fibers, just like your chest or biceps. They require rest to repair and grow. Stick to the twice-per-week core routine.
+    </p>
+    <p><strong>Q: Can I do this program while in a calorie deficit?</strong>
+    <br>A: Yes. This program is highly effective for body recomposition or fat loss. Ensure you maintain high protein intake (1.2g per lb of bodyweight) to preserve muscle mass.
+    </p>
+    
+
+    </body>
+    </html>
+    

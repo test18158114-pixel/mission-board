@@ -1,0 +1,17 @@
+.box{
+    height: 150px;
+    width: 150px;
+    background-color: hotpink;
+    border: 2px solid black;
+    animation: divRotation 5s ease-in 1s infinite normal;
+}
+
+@keyframes divRotation{
+    from {
+        transform: rotate(0deg);
+        border-radius: 0%;
+    } to {
+        transform: rotate(180deg);
+        border-radius: 50%;
+    }
+}

@@ -1,0 +1,141 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+}
+
+.main_box {
+    background: url("photo.jpg");
+    height: 100vh;
+    width: 100vw;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#check{
+    display: none;
+}
+
+.btn_one {
+    color: rgba(255, 255, 255, 0.675);
+    font-size: 30px;
+    font-weight: 600;
+    position: absolute;
+    left: 1.2vw;
+    top: .2em;
+    line-height: 60px;
+    transition: all 0.3s ease;
+}
+
+.btn_one:hover {
+    color: rgba(255, 255, 255, 0.94);
+}
+
+.sidebar_menu {
+    position: fixed;
+    /* left: -400px; */
+    height: 100vh;
+    width: 25vw;
+    /* background-color: pink; */
+    background-color: rgba(255, 253, 253, 0.077);
+    box-shadow: 0 0 6px rgba(255, 255, 255, 0.3);
+    display: flex;
+    flex-direction: column;
+    transition: all 1s ease-in-out;
+}
+
+.sidebar_menu .logo {
+    position: absolute;
+    width: 100%;
+    line-height: 4.3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    /* background-color: tomato; */
+}
+
+.sidebar_menu .logo a{
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.808);
+    font-weight: 600;
+    font-size: 1.5em;
+}
+
+.sidebar_menu .menu {
+    color: rgba(255, 255, 255, 0.675);
+    position: absolute;
+    top: 4.4em;
+    width: 100%;
+    line-height: 4.5em;
+    transition: all 5s ease-in;
+}
+
+.sidebar_menu .menu ul {
+    list-style: none;
+    width: 100%;
+}
+
+.sidebar_menu .menu ul li {
+    width: 94%;
+    padding-left: 1.3em;
+    transition: all 0.3s ease;
+}
+
+.sidebar_menu .menu ul li a {
+    color: rgba(255, 255, 255, 0.675);
+    text-decoration: none;
+    margin-left: 1em;
+}
+.sidebar_menu .btn_two {
+    color: rgba(255, 255, 255, 0.382);
+    position: absolute;
+    font-size: 1.7em;
+    top: .7em;
+    right: .5em;
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+
+.social_media {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 2.5em;
+    position: absolute;
+    width: 100%;
+    bottom: .4em;
+    font-size:1.5em;
+}
+.social_media ul a{
+    display: inline-block;
+    margin: .4vw;
+    color: rgba(255, 255, 255, 0.5);
+    transition: all 0.3s ease;
+}
+
+.social_media ul a:hover {
+    color: rgba(255, 255, 255, 0.871);
+    transform: translateY(-5px);
+}
+
+.logo:hover{
+    box-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
+}
+
+.sidebar_menu .menu ul li:hover{
+    box-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
+}
+
+.btn_two:hover {
+    color: rgba(255, 255, 255, 0.667);
+}
+
+#check:checked ~ .sidebar_menu{
+    left: -30em;
+}
+
+#check:not(:checked) ~ .btn_one{
+    left: -30em;
+}

@@ -1,0 +1,25 @@
+.profile {
+    width: 180px;
+    height: 260px;
+    background-color: whitesmoke;
+    display: inline-block;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 3px 6px 9px black;
+    transition: box-shadow .1s ease .5s;
+}
+
+.lower {
+    padding: 10px;
+}
+
+img {
+    width: 100%;
+    height: 50%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.profile:hover {
+    box-shadow: 6px 10px 16px rgba(0, 0, 0, 0.656);
+}

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tables in HTML</title>
+</head>
+<body>
+
+    <!-- table tag  -->
+    <table border="black"> 
+        <caption>First Table - (Student Data)</caption>
+
+        <!-- table head  -->
+        <thead>
+            <tr>
+                <th>STUDENT_ID</th>
+                <th>STUDENT_NAME</th>
+                <th>COURSE_ID</th>
+                <th>COURSE_NAME</th>
+                <th>MARKS</th>
+            </tr>
+        </thead>
+        
+        <!-- table bode  -->
+        <tbody>
+            <tr>
+                <td>101</td>
+                <td>Ravi</td>
+                <td>D1</td>
+                <td>DBMS</td>
+                <td>60</td>
+            </tr>
+            <tr>
+                <td>102</td>
+                <td>Neha</td>
+                <td>D3</td>
+                <td>JAVA</td>
+                <td>50</td>
+            </tr>
+            <tr>
+                <td>103</td>
+                <td>Priya</td>
+                <td>D2</td>
+                <td>COA</td>
+                <td>68</td>
+            </tr>
+            <tr>
+                <td>104</td>
+                <td>Rohan</td>
+                <td>D4</td>
+                <td>Sigma web dev.</td>
+                <td>69</td>
+            </tr>
+            <tr>
+                <td>105</td>
+                <td>Ankit</td>
+                <td>D2</td>
+                <td>Python</td>
+                <td>68</td>
+            </tr>
+        </tbody>
+
+    </table>
+
+    <br><br>
+
+    <!-- Table 2  -->
+    <table border="black">
+        <caption>Food Menu</caption>
+
+        <thead>
+            <tr>
+                <th rowspan="2">Item</th>
+                <th colspan="2">Price</th>
+            </tr>
+
+            <tr>
+                <th>INR</th>
+                <th>USD</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>Frooti</td>
+                <td>10</td>
+                <td>&#36;0.14</td>
+            </tr>
+            <tr>
+                <td>Samosa</td>
+                <td>12</td>
+                <td>&#36;0.17</td>
+            </tr>
+            <tr>
+                <td>Chips</td>
+                <td>20</td>
+                <td>&#36;0.28</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+    <!-- test table with merged cell  -->
+    <table border="black">
+        <caption>A Test Table with Merged cell</caption>
+
+        <thead>
+            <tr>
+                <th rowspan="2"></th>
+                <th colspan="2">Average</th>
+                <th rowspan="2" colspan="2">Red Eyes</th>
+            </tr>
+            <tr>
+                <th>Height</th>
+                <th>Weight</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>Male</td>
+                <td>1.9</td>
+                <td>0.003</td>
+                <td>40%</td>
+            </tr>
+            <tr>
+                <td>Female</td>
+                <td>1.7</td>
+                <td>0.002</td>
+                <td>43%</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <br><br>
+    <hr><hr>
+
+    <div class="practice-table">
+        <table border="black">
+            <caption>Student Information</caption>
+                <tr>
+                    <th rowspan="6">Info</th>
+                    <th rowspan="2">Name</th>
+                    <th colspan="2">Address</th>
+                </tr>
+                <tr>
+                    <th>City</th>
+                    <th>House</th>
+                </tr>
+
+                <tr>
+                    <td>A</td>
+                    <td>Delhi</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>B</td>
+                    <td>Mumbai</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>C</td>
+                    <td>Kolkata</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>D</td>
+                    <td>Pune</td>
+                    <td>4</td>
+                </tr>
+        </table>
+    </div>
+
+</body>
+</html>

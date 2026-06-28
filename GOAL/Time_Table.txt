@@ -1,0 +1,172 @@
+🗓️ Month-by-Month Roadmap to Crack Microsoft (24 Months)
+
+
+📍 Phase 1: Foundations (Months 1–4)
+
+Month 1:(September 2025)
+            ✅ Pick primary language (C++ preferred, else Java/Python).
+            Learn syntax, OOP basics (classes, objects, inheritance).
+            Revise Maths basics (discrete math, logic, modular arithmetic).
+            Start with easy LeetCode problems (arrays, strings) → ~30 problems.
+
+
+Month 2:(October 2025)
+            Learn Linked Lists, Stacks, Queues.
+            Start DBMS basics (ER diagrams, SQL queries).
+            OS concepts: processes, scheduling, deadlocks.
+            LeetCode practice: 40 problems (mix of arrays + linked lists).
+
+
+Month 3:(November 2025)
+            Learn Trees & Binary Search Trees.
+            CN basics: OSI/TCP layers, IP, HTTP/HTTPS.
+            SQL practice (joins, group by, indexing).
+            LeetCode practice: 40–50 tree-related problems.
+
+
+Month 4:(December 2025)
+            Learn Graphs (BFS, DFS, shortest paths).
+            Advance OS (memory management, paging, segmentation).
+            LeetCode practice: 40 graph problems.
+            Start dynamic programming basics (Fibonacci, knapsack).
+
+
+
+
+
+📍 Phase 2: DSA Mastery (Months 5–12)
+
+Month 5:(January 2026)
+            DP: knapsack variations, LIS, LCS.
+            LeetCode: 40 DP problems.
+            Start practicing on InterviewBit.
+
+
+Month 6:(February 2026)
+            Advanced DP (matrix DP, partition DP).
+            Greedy algorithms.
+            LeetCode: 50 problems.
+
+
+Month 7:(March 2026)
+            Master binary search tricks (rotated arrays, median, etc.).
+            Practice recursion + backtracking.
+            LeetCode: 40 problems.
+
+
+Month 8:(April 2026)
+            Heaps, Tries, Segment Trees, Fenwick Trees.
+            Practice hard graph problems (Union-Find, Topological sort).
+            LeetCode: 40 problems.
+
+
+Month 9:(May 2026)
+            Start mock coding contests (Codeforces/LeetCode weekly).
+            Revise OS + DBMS + CN weekly.
+            LeetCode: 50 problems.
+
+
+Month 10–12:(June 2026 -- August 2026)
+            Mixed revision of all DSA topics.
+            2 contests per week (Codeforces/LeetCode).
+            Solve 150 more mixed LeetCode problems.
+            By end of Month 12 → 400–500 problems solved.
+
+
+
+
+
+📍 Phase 3: System Design (Months 13–16)
+
+Month 13:
+            Learn OOP design patterns (Singleton, Factory, Observer, Builder).
+            Small LLD case studies: Parking Lot, Library System.
+
+
+Month 14:
+            Start High-Level Design (load balancing, caching, sharding).
+            Study scalability & distributed systems basics.
+            Case study: Design URL Shortener.
+
+Month 15:
+            Practice 3–4 LLD design problems.
+            HLD: Design Twitter/Instagram.
+            Revise OS/DBMS concepts.
+
+Month 16:
+            Advanced design: WhatsApp, Netflix, Microsoft Teams.
+            Mock interviews (system design focus).
+
+
+
+
+
+📍 Phase 4: Projects + Resume (Months 17–20)
+
+Month 17:
+            Start full-stack project (React + Node + SQL/NoSQL).
+            Deploy on Azure.
+
+
+Month 18:
+            Build AI/ML project (NLP chatbot / recommender system).
+            Use Azure ML Studio.
+
+
+Month 19:
+            Build Cloud project (Serverless app, IoT, or scalable API).
+            Contribute to Microsoft open-source repos.
+
+
+Month 20:
+            Finalize 2–3 strong projects.
+            Prepare resume (one-page, impact-driven).
+            Share projects on GitHub + LinkedIn.
+
+
+
+
+
+📍 Phase 5: Interview Prep (Months 21–23)
+
+Month 21:
+            Start mock interviews (Pramp, peers).
+            Revise DSA (target weak areas).
+            LeetCode: 50 Microsoft-tagged questions.
+
+
+Month 22:
+            Full-length mocks
+            1 coding round per day.
+            1 system design round every 2 days.
+            Practice behavioral questions (STAR format).
+
+Month 23:
+            Simulate full Microsoft interview:
+            1 Online Assessment.
+            2 Technical Interviews.
+            1 Design Round.
+            1 Behavioral Round.
+
+
+
+
+
+📍 Phase 6: Application & Networking (Month 24)
+
+Month 24:
+            Apply through Microsoft Careers.
+            Reach out to employees for referrals.
+            Optimize LinkedIn profile (show Azure projects + DSA streak).
+            Appear for interviews with full confidence.
+
+
+
+🏆 Final Deliverables After 24 Months
+
+✅ 500–600 DSA problems solved
+✅ Strong command of OS, DBMS, CN, System Design
+✅ 2–3 resume-worthy projects (with Azure + AI)
+✅ Mock interview experience
+✅ Referrals from Microsoft employees
+✅ One-page professional resume

@@ -1,0 +1,108 @@
+* {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+h3 {
+    color: red;
+}
+
+h1 {
+    color: blue;
+}
+
+#login {
+    color: red;
+    background-color: whitesmoke;
+}
+
+#signup {
+    background-color: red;
+    color: white;
+}
+
+.follow {
+    color: blue;
+    text-decoration: none;
+}
+
+p a {
+    color: red;
+}
+
+nav ul li a, nav ul li {
+    color: hotpink;
+}
+
+/* siblings combinator */
+p  + h3 + button{
+    background-color: chartreuse;
+}
+
+header > nav ul li  a{
+    color: aqua;
+}
+
+header > div > input {
+    background-color: rgba(213, 212, 212, 0.781);
+}
+
+/* attribute selector */
+input[type="text"] { 
+    color: white;
+    background-color: rgba(41, 214, 41, 0.868);
+}
+input[type="password"] {
+    color: black;
+    background-color: rgba(117, 193, 41, 0.962);
+}
+
+
+/* pseudo selectors  */
+#login:hover {
+    color: black;
+    background-color: aqua;
+}
+
+h3:hover {
+    text-decoration: underline darkred;
+    color: rgb(228, 74, 74);
+}
+
+button:active {
+    color: pink;
+    background-color: whitesmoke;
+}
+
+p:active {
+    font-weight: bold;
+    font-size: larger;
+}
+
+#yes:checked + label, #no:checked + label{
+    color: red;
+    font-weight: bolder;
+}
+/* input[type="radio"]:checked + label {
+    color: red;
+    font-weight: bolder;
+} */
+
+.post:nth-of-type(2n - 1) {
+    background-color: aqua;
+}
+
+
+/* pseudo element  */
+h1::first-letter {
+    color: black;
+}
+
+p::first-line {
+    color: red;
+    text-decoration: underline dashed darkblue;
+}
+
+body::selection {
+    background-color: rgb(239, 239, 118);
+    color: red;
+}

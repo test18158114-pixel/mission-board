@@ -1,0 +1,289 @@
+🧩 Phase 1: Java + CS Foundations (6 Months)
+
+🎯 Goal: Become fluent in Java syntax, OOP, and fundamentals.
+
+📘 Topics You Must Know
+	1. Java Basics
+
+		Variables, data types (primitive + reference)
+		Type casting, operators, conditionals, loops
+		Functions/methods (parameters, return types, scope, static vs instance)
+		Arrays (1D, 2D), Array operations
+		Input/Output in Java (Scanner, BufferedReader)
+
+	2. OOP (Object-Oriented Programming)
+
+		Class & Object → how data + methods bind together
+		Encapsulation → private data + public getters/setters
+		Inheritance → extends, super, method overriding
+		Polymorphism → compile-time (overloading), runtime (overriding)
+		Abstraction → abstract class, interfaces
+		Constructors, this, super, static keyword
+
+	3. Exception Handling
+
+		try, catch, finally, throw, throws
+		Custom exceptions
+
+	4. File Handling
+
+		File creation, reading, writing (FileReader, FileWriter, BufferedReader)
+
+	5. Multithreading
+
+		Thread lifecycle
+		Thread class vs Runnable interface
+		Synchronization, inter-thread communication
+
+	6. Collections Framework
+
+		List (ArrayList, LinkedList)
+		Set (HashSet, TreeSet)
+		Map (HashMap, TreeMap)
+		Queue, Stack, PriorityQueue
+		Iterators, enhanced for loops
+		Comparators and sorting
+
+	7. Java 8+ Features
+
+		Streams API, Lambda Expressions, Functional Interfaces
+		Optional, Collectors, Map/Filter/Reduce
+
+	8. Big-O Notation
+
+		Analyze time & space complexity
+		Big-O, Big-Theta, Big-Omega basics
+
+
+	💡 Practice Questions (Easy → Hard)
+
+	1️⃣ Print Fibonacci series up to N.
+	2️⃣ Reverse a string without using built-in functions.
+	3️⃣ Find factorial using recursion.
+	4️⃣ Check if a number is prime.
+	5️⃣ Count frequency of each character in a string using HashMap.
+	6️⃣ Sort an array using Collections.sort().
+	7️⃣ Implement a simple banking system (deposit, withdraw, balance check).
+	8️⃣ Read a text file and count the number of lines/words.
+	9️⃣ Create a multithreaded program to print even/odd numbers alternately.
+	🔟 Use Streams API to find average salary of employees from a list.
+
+
+⚙️ Phase 2: Data Structures & Algorithms (1 Year)
+🎯 Goal: Be a problem-solving beast for coding rounds.
+
+📘 Topics You Must Know
+	1. Arrays & Strings
+
+		Two pointers, sliding window
+		Prefix/suffix sum, Kadane’s Algorithm
+		String manipulation, substring search
+
+	2. Linked List, Stack, Queue
+		Singly & Doubly linked list
+		Reversal, detection of cycle (Floyd’s algo)
+		Stack using array/list
+		Queue using array/list
+
+	3. Recursion & Backtracking
+
+		Subsets, permutations, combinations
+		N-Queens, Sudoku solver
+
+	4. Searching & Sorting
+
+		Binary search variations (lower bound, upper bound)
+		QuickSort, MergeSort, HeapSort
+
+	5. Hashing
+
+		HashMap, HashSet applications
+		Anagrams, frequency counting
+
+	6. Trees
+
+		Traversals (inorder, preorder, postorder)
+		Binary Search Tree operations
+		Lowest Common Ancestor, Height, Diameter
+		Trie construction
+
+	7. Graphs
+
+		BFS, DFS
+		Shortest paths (Dijkstra, Bellman-Ford)
+		Topological Sort, Union-Find
+
+	8. Dynamic Programming
+
+		Fibonacci (memoization + tabulation)
+		Knapsack, LIS, LCS, Matrix DP
+
+	💡 Practice Questions (Easy → Hard)
+
+	1️⃣ Two Sum (LeetCode #1)
+	2️⃣ Reverse a Linked List
+	3️⃣ Detect Cycle in Linked List
+	4️⃣ Implement Stack using Queues
+	5️⃣ Search in Rotated Sorted Array
+	6️⃣ Longest Substring Without Repeating Characters
+	7️⃣ Lowest Common Ancestor in Binary Tree
+	8️⃣ Word Ladder (BFS)
+	9️⃣ Coin Change (DP)
+	🔟 Longest Increasing Subsequence (DP)
+
+🖥️ Phase 3: Core CS Subjects (Parallel)
+🎯 Goal: Build strong computer science foundation.
+
+📘 Topics You Must Know
+	1. Operating System
+
+		Processes, Threads, Scheduling (FCFS, RR, SJF)
+		Deadlocks (prevention, avoidance)
+		Memory Management (paging, segmentation, virtual memory)
+		Synchronization (mutex, semaphore, monitors)
+
+	2. DBMS
+
+		Normalization (1NF–3NF, BCNF)
+		SQL queries (JOIN, GROUP BY, HAVING)
+		Indexing, ACID properties
+		Transactions & Concurrency control
+
+	3. Computer Networks
+
+		OSI model, TCP/IP layers
+		IP addressing, Subnetting
+		DNS, DHCP, ARP
+		TCP vs UDP, HTTP/HTTPS
+		Routing basics
+
+	4. OOP + Design
+
+		SOLID principles
+		Design patterns (Singleton, Factory, Observer, Strategy)
+		UML diagrams
+
+	💡 Practice Questions (Easy → Hard)
+
+	1️⃣ Explain difference between process & thread.
+	2️⃣ Write SQL query: Find top 3 highest salaries from Employee table.
+	3️⃣ What happens when you type a URL and press Enter?
+	4️⃣ Explain normalization with example.
+	5️⃣ Design a class hierarchy for a Library Management System.
+	6️⃣ Write a SQL query to find duplicate records.
+	7️⃣ Explain deadlock conditions and prevention.
+	8️⃣ How does DNS resolve domain names?
+	9️⃣ Explain Singleton vs Factory pattern with Java example.
+	🔟 Design a multithread-safe banking transaction system.
+
+🚀 Phase 4: Projects + Development (2nd–3rd Year)
+🎯 Goal: Build real-world & deployable projects.
+
+📘 Topics You Must Know
+	1. Spring Boot & REST
+
+		Annotations (@RestController, @Autowired, @RequestMapping)
+		Dependency Injection
+		CRUD operations
+		Exception handling, validation
+		Spring Security basics
+
+	2. Database Integration
+
+		MySQL / MongoDB connectivity
+		JPA / Hibernate
+		Relationships: OneToMany, ManyToOne
+
+	3. Full Stack Basics
+
+		React (optional) + REST API connection
+		JSON, Fetch API
+
+	4. Cloud Deployment
+
+		AWS EC2 / Azure App Service
+		CI/CD basics (GitHub Actions)
+
+	5. Open Source
+	
+		Fork, PR, issue contribution on GitHub
+	
+
+	💡 Practice Projects (Easy → Hard)
+
+	1️⃣ To-Do List App (Java + File Handling)
+	2️⃣ Student Management System (Java + MySQL)
+	3️⃣ REST API for Library Management (Spring Boot)
+	4️⃣ Chat App using Sockets
+	5️⃣ Expense Tracker (Spring Boot + React)
+	6️⃣ URL Shortener using Spring Boot
+	7️⃣ E-commerce Backend (JWT Auth + MySQL)
+	8️⃣ Deploy project on AWS EC2
+	9️⃣ Contribute bug-fix in open-source Java project
+	🔟 Build Microservice-based application (Order + Payment services)
+
+🧠 Phase 5: System Design (LLD + HLD)
+🎯 Goal: Design large-scale systems like Netflix, WhatsApp, etc.
+
+📘 Topics You Must Know
+	1. Low-Level Design (LLD)
+
+		OOP + SOLID
+		UML, class diagrams
+		Design patterns
+		Example: Design Elevator System, Parking Lot, ATM
+
+	2. High-Level Design (HLD)
+
+		Load balancers, caching (Redis), databases (SQL vs NoSQL)
+		Horizontal vs vertical scaling
+		Sharding, replication, CAP theorem
+		Designing distributed systems
+
+
+	💡 Practice Questions (Easy → Hard)
+
+	1️⃣ Design a Library Management System (LLD)
+	2️⃣ Design a Movie Booking System
+	3️⃣ Design a URL Shortener (HLD)
+	4️⃣ Design WhatsApp (HLD)
+	5️⃣ Design Uber (HLD)
+	6️⃣ Design Instagram Feed
+	7️⃣ Design a Notification System
+	8️⃣ Design a Rate Limiter
+	9️⃣ Design a Payment Gateway
+	🔟 Design YouTube Recommendation System
+
+
+
+🎯 Phase 6: Interview Preparation (Final Year)
+🎯 Goal: Crack Microsoft, Amazon, or global offers.
+
+📘 Must Do
+
+	Resume → 2 big projects + internship + DSA stats
+	LeetCode contests → weekly
+	Mock interviews → Pramp, InterviewBit
+	Revise all CS topics + system design + DSA
+
+	💡 Practice Questions (Easy → Hard)
+	1️⃣ Tell me about your project.
+	2️⃣ What’s your favorite data structure and why?
+	3️⃣ Explain difference between process & thread.
+	4️⃣ Solve: 3Sum problem
+	5️⃣ Design elevator system (LLD)
+	6️⃣ Solve: Merge k sorted lists
+	7️⃣ Design a scalable chat system
+	8️⃣ Optimize SQL query for large data
+	9️⃣ Explain your project’s scalability plan
+	🔟 Mock interview: DSA + System Design combined
+
+
+🏆 If You Follow This
+
+By the end of 4th year:
+
+✅ 700+ DSA problems
+✅ 3+ industry-level projects (deployed on cloud)
+✅ Strong CS subjects + System Design
+✅ Mock interviews + global internships

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete forms practice no. 1 in HTML</title>
+</head>
+<body>
+
+    <form action="/action" style="line-height: 2;">
+        <caption>Complete HTML Form Example (All input Types)</caption>
+        <div class="complete-form">
+            <div class="personal-info" style="border: 2px solid black; padding: 10px;">
+                <h2 style="color: blue;">1. Personal Information</h2>
+                <label for="text">Text: </label>
+                <input type="text" id="text" name="text" placeholder="Enter Text"> 
+                <label for="fname">First Name: </label>
+                <input type="text" name="fname" id="fname" placeholder="Enter first name" required><br>
+                <label for="pass">Password: </label>
+                <input type="password" name="pass" id="pass" required placeholder="Enter password">
+                <label for="lname">Last Name:</label> 
+                <input type="text" name="lname" id="lname" placeholder="Enter last name"> <br>
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" placeholder="Enter email" required>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" placeholder="Enter username" required> <br>
+                <label for="num">Number:</label>
+                <input type="number" name="num" id="num" placeholder="Enter number">
+                <label for="age">Age:</label>
+                <input type="number" name="age" id="age" placeholder="Enter age" min="1" max="150" required> <br>
+                <label for="tel">Tel:</label>
+                <input type="tel" name="tel" id="tel" placeholder="Enter telephone number">
+                <label for="phno">Phone Number:</label>
+                <input type="number" name="phno" id="phno" placeholder="Enter phone number" pattern="[0-9]{10}" maxlength="10" required> <br>
+                <label for="url">URL</label>
+                <input type="url" name="url" id="url" placeholder="Enter url">
+                <label for="web">Website: </label>
+                <input type="url" name="web" id="web" placeholder="Enter website url"> <br>
+                <label for="search">Search</label>
+                <input type="search" id="search" name="search" placeholder="Search here...">
+                <label for="lang">Language (Datalist): </label>
+                <input list="language" id="lang" name="lang" placeholder="Choose your language">
+                <datalist id="language">
+                    <option value="html">HTML</option>
+                    <option value="css">CSS</option>
+                    <option value="js">JavaScript</option>
+                    <option value="py">Python</option>
+                    <option value="java">Java</option>
+                    <option value="cpp">C++</option>
+                </datalist><br>
+                <label for="date">Date:</label>
+                <input type="date" name="date" id="date"> <br>
+                <label for="time">Time:</label>
+                <input type="time" name="time" id="time"> <br>
+                <label for="date-time">Date & Time Local:</label>
+                <input type="datetime-local" name="date-time" id="date-time"> <br>
+                <label for="month">Month:</label>
+                <input type="month" name="month" id="month"> <br>
+                <label for="week">Week:</label>
+                <input type="week" name="week" id="week"> <br>
+                <label for="color">Color:</label>
+                <input type="color" name="color" id="color"> <br>
+                <label for="range">Range:</label>
+                <input type="range" name="range" id="range" min="0" max="100" step="10"> <br>
+                <label for="hidden">Hidden: </label>
+                <input type="hidden" id="hidden" name="hidden"> (Hidden value will be submitted)
+            </div>
+            <hr>
+
+            <div class="gender-hobbies" style="border: 2px solid black; padding: 10px;">
+                <h2 style="color: blue;">2. Gender & Hobbies</h2>
+                <span>
+                    Gender: 
+                    <input type="radio" name="gender" id="male" value="male">
+                    <label for="male">Male</label>
+                    <input type="radio" name="gender" id="female" value="female">
+                    <label for="female">Female</label>
+                    <input type="radio" name="gender" id="other" value="other">
+                    <label for="other">Other</label>
+                </span>
+                <span style="margin: 100px;">
+                    Hobbies:
+                    <input type="checkbox" name="hobby" id="reading" value="Reading">
+                    <label for="reading">Reading</label>
+                    <input type="checkbox" name="hobby" id="Coding" value="Coding">
+                    <label for="Coding">Coding</label>
+                    <input type="checkbox" name="hobby" id="Gaming" value="Gaming">
+                    <label for="Gaming">Gaming</label>
+                    <input type="checkbox" name="hobby" id="Sports" value="Sports">
+                    <label for="Sports">Sports</label>
+                    <input type="checkbox" name="hobby" id="Music" value="Music">
+                    <label for="Music">Music</label>
+                    <input type="checkbox" name="hobby" id="Travel" value="Travel">
+                    <label for="Travel">Travel</label>
+                    <input type="checkbox" name="hobby" id="Other" value="Other">
+                    <label for="Other">Other</label>
+                </span>
+            </div>
+        </div>
+    </form>
+
+</body>
+</html>

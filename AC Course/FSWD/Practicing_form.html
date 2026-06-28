@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practicing Form</title>
+</head>
+<body>
+
+    <div class="student-register-form">
+        <form action="/action">
+            <h1>Student Registration Form</h1>
+            <div class="name">
+                <label for="fname">First Name: </label>
+                <input type="text" name="fname" id="fname" placeholder="Enter your first name.." required>  <br>
+                <label for="lname">Last Name: </label>
+                <input type="text" name="lname" id="lname" placeholder="Enter your last name.." required>
+            </div>
+            <div class="email-pass">
+                <label for="email">Email: </label>
+                <input type="email" name="email" id="email" placeholder="Enter your email..">  <br>
+                <label for="pass">Password: </label>
+                <input type="password" name="pass" id="pass" placeholder="Enter password..">
+            </div>
+            <div class="age-dob">
+                <label for="age">Age: </label>
+                <input type="number" name="age" id="age" min="1"> <br>
+                <label for="dob">Date of Birth: </label>
+                <input type="date" name="dob" id="dob"> <br>
+                <label for="time">Prefered Time: </label>
+                <input type="time" name="time" id="time">
+            </div>
+            <div class="color">
+                <label for="color">Favorite Color: </label>
+                <input type="color" name="color" id="color">
+            </div>
+            <div class="skill-level">
+                <label for="skill">Skill level: </label>
+                <input type="range" name="skill" id="skill" min="0" max="10" step="1">
+            </div>
+            <div class="mob-web">
+                <label for="mobile">Phone Number: </label>
+                <input type="tel" name="mobile" id="mobile"> <br>
+                <label for="web">Website: </label>
+                <input type="url" name="web" id="web">
+            </div>
+            <div class="radio-checkbx">
+                Gender: 
+                <input type="radio" name="gender" id="male" value="Male">
+                <label for="male">Male</label> 
+                <input type="radio" name="gender" id="female" value="Female">
+                <label for="female">Female</label> 
+                <input type="radio" name="gender" id="other" value="Other">
+                <label for="other">Other</label> <br>
+
+                Hobbies: 
+                <input type="checkbox" name="Hobbies" id="reading" value="Reading">
+                <label for="reading">Reading</label>
+                <input type="checkbox" name="Hobbies" id="coding" value="Coding">
+                <label for="coding">Coding</label>
+                <input type="checkbox" name="Hobbies" id="gaming" value="Gaming">
+                <label for="gaming">Gaming</label>
+                <input type="checkbox" name="Hobbies" id="sports" value="Sports">
+                <label for="sports">Sports</label>
+            </div>
+            <div class="course">
+                <label for="course">Course:</label>
+                <select name="course" id="course">
+                    <option value="" selected>Select a course</option>
+                    <option value="BCA" >BCA</option>
+                    <option value="B.Tech">B.Tech</option>
+                    <option value="HM">HM</option>
+                </select>
+            </div>
+            <div class="programming-lang">
+                <label for="programming-lang">Programming Languages: </label>
+                <select multiple size="5" name="programming-lang" id="programming-lang">
+                    <option value="HTML">HTML</option>
+                    <option value="PHP">PHP</option>
+                    <option value="CSS">CSS</option>
+                    <option value="JS">JS</option>
+                    <option value="Java">Java</option>
+                    <option value="Python">Python</option>
+                    <option value="CPP">CPP</option>
+                    <option value="Node JS">Node JS</option>
+                </select>
+            </div>
+            <div class="address">
+                <label for="address">Address: </label>
+                <textarea name="Address" id="address" rows="5" cols="30"></textarea>
+            </div>
+            <div class="file-upload">
+                <label for="upload">Upload Resume: </label>
+                <input type="file" name="resume" id="upload">
+            </div>
+            <div class="search">
+                <label for="search">Search: </label>
+                <input type="search" name="search" id="search">
+            </div>
+            <div class="city">
+                <label for="city">Choose City: </label>
+                <input list="cities" name="city" id="city">
+                <datalist id="cities">
+                    <option value="Delhi">Delhi</option>
+                    <option value="Mumbai">Mumbai</option>
+                    <option value="Uttarakhand">Uttarakhand</option>
+                    <option value="Goa">Goa</option>
+                    <option value="Lucknow">Lucknow</option>
+                </datalist>
+            </div>
+            <div class="hidden">
+                <label for="hidden">(Hidden Field)</label>
+                <input type="hidden" name="hidden" id="hidden" value="Student">
+            </div>
+            <div class="button">
+                <button type="reset">Reset</button>
+                <button>Submit</button>
+            </div>
+        </form>
+    </div>
+
+
+
+
+
+<br><br><br><hr><hr><br><br><hr><hr>
+    <form action="/server">
+        <h1>Registration Form: </h1>
+        <div class="name">
+            <input type="text" placeholder="First name" name="FirstName">
+            <input type="text" placeholder="Last name" name="LastName">
+        </div>
+        <div class="drop-down">
+            <label for="gender">Enter your gender: </label>
+            <select name="gender" id="gender">
+                <option value="male" selected >Male</option>
+                <option value="female" >Female</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+        <div class="check-box">
+            <label for="terms">Do you agree to all terms of service ?</label>
+            <input type="checkbox" name="terms" id="terms">
+            Yes, I agree
+        </div>
+        <button>Register</button>
+    </form>
+
+    <hr><hr><hr><hr><hr>
+
+    <div>
+        <form action="/server">
+            <div class="name">
+                <label for="name">Name: </label>
+                <input type="text" id="name" name="name">
+            </div>
+            <div class="sex">
+                Sex: 
+                <input type="radio" name="sex" value="male" id="male">
+                <label for="male">Male</label>
+
+                <input type="radio" name="sex" id="female" value="female">
+                <label for="female">Female</label>
+            </div>
+
+            <div class="drop-down">
+                <label for="country">Country: </label>
+                <select name="Country" id="country">
+                    <option selected>Select an Option</option>
+                    <option value="India">India</option>
+                    <option value="Nepal">Nepal</option>
+                    <option value="USA">USA</option>
+                    <option value="Canada">Canada</option>
+                </select>
+            </div>
+            <div class="text-area">
+                <label for="message">Message: </label><br>
+                <textarea name="meaasge" id="message" rows="8" cols="48"></textarea>
+            </div>
+            <div class="check-box">
+                <input type="checkbox" name="subscribe" id="subscribe">
+                <label for="subscribe">Subscribe ?</label>
+            </div>
+            <button>Submit</button>
+        </form>
+    </div>
+
+    <hr><hr><hr><hr><hr>
+
+    <div class="feedback-form">
+        <form action="/server">
+            <h1>Feedback Form</h1>
+            <div class="name">
+                <label for="name">Name: </label>
+                <input type="text" name="name" id="name" placeholder="Write your name">
+            </div>
+            <div class="email">
+                <label for="email"> Email: </label>
+                <input type="email" name="email" id="email" placeholder="Write your email">
+            </div>
+            <div class="text-area">
+                <label for="feedback">Message: </label><br>
+                <textarea name="feedback" id="feedback" rows="8" cols="48"></textarea>
+            </div>
+            <div class="radio">
+                Rate us out of 5: <br>
+                <input type="radio" name="rating" id="1" value="1">
+                <label for="1">1</label> <br>
+                <input type="radio" name="rating" id="2" value="2">
+                <label for="2">2</label> <br>
+                <input type="radio" name="rating" id="3" value="3">
+                <label for="3">3</label> <br>
+                <input type="radio" name="rating" id="4" value="4">
+                <label for="4">4</label> <br>
+                <input type="radio" name="rating" id="5" value="5">
+                <label for="5">5</label>
+            </div>
+            <button>Send your Message!</button>
+        </form>
+    </div>
+
+</body>
+</html>

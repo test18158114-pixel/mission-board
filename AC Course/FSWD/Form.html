@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms in HTML</title>
+</head>
+<body>
+
+    <form action="/action">
+        Username 
+        <input type="text" placeholder="Enter your username"> <br>
+        Color
+        <input type="color"> <br>
+        Button
+        <input type="button" value="Click Me"> <br>
+        Submit button
+        <input type="submit"> <br>
+        Password
+        <input type="password" placeholder="Enter Password"><br>
+        Time
+        <input type="time"><br>
+        File
+        <input type="file"><br>
+        Number
+        <input type="number"><br>
+        Date
+        <input type="date"> <br>
+    </form>
+
+    <hr>
+
+    <form action="/acton">
+        <label>
+            Username
+            <input type="text" placeholder="Enter your username....">
+        </label>
+
+        <label>
+            Password 
+            <input type="password" placeholder="Enter your password....">
+        </label>
+        
+        <label for="user">User</label>
+        <input type="text" id="user" placeholder="Enter user..">
+        <button>Click Meee</button>
+    </form>
+
+    <hr>
+
+    <div>
+        <br>
+        <form action="/server">
+            <div>
+                <label for="username">Enter your Username: </label>
+                <input type="text" placeholder="Enter username..." id="username">
+            </div>
+
+            <div>
+                <label for="password">Enter your Password: </label>
+                <input type="text" id="password" placeholder="Enter Password...">
+            </div>
+
+            <div>
+                <label for="age">Enter your Age: </label>
+                <input type="text" placeholder="Enter your age......" id="age">
+            </div>
+            <button>Log in</button>
+        </form>
+    </div>
+
+    <hr>
+
+    <div>
+        <form action="/helloserver">
+            <div>
+                <div>
+                <label for="username">Enter your Username: </label>
+                <input type="text" placeholder="Enter username..." id="username">
+            </div>
+
+            <div>
+                <label for="password">Enter your Password: </label>
+                <input type="text" id="password" placeholder="Enter Password...">
+            </div>
+
+            <div>
+                <label for="age">Enter your Age: </label>
+                <input type="text" placeholder="Enter your age......" id="age">
+            </div>
+            <button>Log in</button>
+
+                types of buttons: <br>
+                1. Submit button (Used to submit the information, it is default button): <button type="submit">Submit</button> <br>
+                2. Button Type button (It is a Simple Button): <button type="button">Button</button> <br>
+                3. Reset button (Reset all information): <button type="reset">Reset</button>
+            </div>
+        </form>
+    </div>
+
+    <hr>
+    <h1>Youtube search form</h1>
+    <div>
+        <form action="https://www.youtube.com/results">
+            <input type="text" placeholder="search" name="search_query">
+            <button>Search</button>
+        </form>
+    </div>
+
+    <hr>
+    <h1>Google Search</h1>
+    <div>
+        <form action="https://www.google.com/search">
+            <input type="text" placeholder="Search here..." name="q">
+            <button>Search</button>
+        </form>
+    </div>
+    <hr>
+
+    <form action="/action">
+        <div>
+            <h2>Check Box</h2>
+            <label for="18+">I am 18+</label>
+            <input type="checkbox" name="adult" id="18+" checked value="18+">
+
+            <label for="adult">Married </label>
+            <input type="checkbox" name="adult" id="adult" value="adult">
+
+            <div>
+                <input type="radio" name="fruit" id="apple" value="apple">
+                <label for="apple">Apple</label>
+                <input type="radio" name="fruit" id="mango" value="mango">
+                <label for="mango">Mango</label>
+                <input type="radio" name="fruit" id="orange" value="orange">
+                <label for="orange">Orange</label>
+                <input type="radio" name="fruit" id="grapes" value="grapes">
+                <label for="grapes">Grapes</label>
+                <input type="radio" name="fruit" id="banana" value="banana">
+                <label for="banana">Banana</label>
+            </div>
+            <button>Submit</button>
+        </div>
+    </form>
+
+    <hr>
+
+    <form action="/action">
+        <h1>Drop Downs</h1>
+        Choose your favoourite gun: 
+        <select name="gun" id="gun">
+            <option selected>Select your option</option>
+            <option value="Mp40">Mp40</option>
+            <option value="M1887">M1887</option>
+            <option value="AWM">AWM</option>
+            <option value="Desert">Desert Eagle</option>
+            <option value="UMP">UMP</option>
+            <option value="MP5">MP5</option>
+            <option value="AK47">AK47</option>
+        </select>
+        <button>Submit</button>
+    </form>
+
+    <hr>
+
+    <div>
+        <form action="/action">
+            <h1>Range Input</h1>
+            <label for="volume">Volume</label>
+            <input type="range" id="volume" name="volume" min="0" max="100" step="5" value="70">
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <hr>
+
+    <div>
+        <form action="/action">
+            <h1>Text Area</h1>
+            <label for="feedback">Enter your feedback: </label>
+            <textarea name="feedback" id="feedback" rows="10" cols="40" placeholder="Enter your feedback here..."></textarea>
+            <button>Submit</button>
+        </form>
+    </div>
+</body>
+</html>
